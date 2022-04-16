@@ -1,0 +1,47 @@
+<mat-card>
+    <div class="date">
+        {{date | date: 'dd - MMM-YYY     HH.mm'  }}
+    </div>
+    <mat-card-header>madarasa</mat-card-header>
+    <mat-card-subtitle>list ya madarasa</mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            <button mat-raised-button color="accent" (click)="OnCreate()">Add Class</button>
+        </div>
+        <table class="table table-border">
+            <thead>
+                <tr >
+                    <th>SN</th>
+                    <th>ID</th>
+                    <th>CLASS NAME</th>
+                    <Th>Action</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let classes of classList,let x=index">
+                    <td>{{x+1}}</td>
+                    <td>{{classes.course_id}}</td>
+                    <td>{{classes.course_name}}</td>
+                    <td>
+                    <button mat-raised-button color='primary'(click)="OnEdit(classes)" >
+                        <mat-icon>
+                            edit
+                        </mat-icon>
+                    edit</button>
+                    <button mat-raised-button color='primary' (click)="Ondelete(classes.course_id)" >
+                        <mat-icon>
+                            delete
+                        </mat-icon>
+                    edit</button>
+    
+                    </td>
+                </tr>
+            </tbody>
+           
+            
+        </table>
+        
+
+    </mat-card-content>
+
+</mat-card>

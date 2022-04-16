@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col">
+    <form [formGroup]=editForm autocomplete="off">
+    
+    <div class="col-md-6">
+        <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+            <mat-label> Class Name</mat-label>
+            <input matInput formControlName="course_name" placeholder="name" value="name">
+          </mat-form-field>
+        
+    </div>
+    </form>
+    
+    <div class="col">
+        <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="OnChange()">change</button>
+        
+    </div>
+</div>

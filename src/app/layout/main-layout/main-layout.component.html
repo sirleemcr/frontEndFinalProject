@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>قاءمة</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/"> 
+        <mat-icon>home </mat-icon>
+        لوحة القيادة</a>
+    <a mat-list-item routerLink="/student-table">التلا ميذ </a>
+      <a mat-list-item routerLink="/teacher"><mat-icon>people</mat-icon>  المعلم</a>
+      <a mat-list-item routerLink="/subject">موضوعات</a>
+      <a mat-list-item routerLink="/coursetable">الدرأس</a>
+      <a mat-list-item routerLink="/exam">الإمتحآن</a>
+      <a mat-list-item routerLink="/t.co">teacher.enrol</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span><h6>المدراسة  الشاكرين</h6></span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
