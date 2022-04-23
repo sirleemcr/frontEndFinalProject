@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subject-form',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+  OnAdd(){
+    this.route.navigateByUrl('/add-subject')
+  }
+
+  OnEdit(){
+
+  }
+  OnUpdate(){
+   this.route.navigateByUrl('/edit-subject')
+  }
+  OnDelete(){
+
   }
 
 }

@@ -1,6 +1,72 @@
 
-<div>
-    <button mat-raised-button color="accent" (click)="OnCreate()">ADD STUDENT</button>
-</div>
+
+<mat-card>
+    <div class="date">
+        {{date | date: 'dd - MMM-YYY     HH.mm'  }}
+    </div>
+    <mat-card-title>الطلاب</mat-card-title>
+    <mat-card-subtitle>قاءمة الطلاب</mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            <button mat-raised-button color="accent" (click)="OnCreate()">أدخل الطلاب</button>
+        </div>
+        <table class="table table-border">
+            <thead>
+                <tr >
+                    <th>رقم سري</th>
+                    <th>رقم التسجيل</th>
+                    <th>إسم الطلاب</th>
+                    <Th>إسم جده</Th>
+                     <th>إسم أب</th>
+                    <th>ترييخ الميلاد</th>
+                    <th>مكان</th>
+                    <th>جنسية</th>
+                    <th>جنس</th>
+                    <th>الدراس</th>
+                    <th>إسم وآلد</th>
+                    <th>رققم هاتف وآلد</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stud  of studentList,let y=index">
+                    <td>{{y+1}}<td>
+                    <td>{{stud.id}}</td>
+                    <td>{{stud.FirstName}}</td>
+                    <td>{{stud.LastName}}</td>
+                    <td>{{stud.MiddleName}}</td>
+                    <td>{{stud.Place}}</td>
+                    <td>{{stud.Nationality}}</td>
+                    <td>{{stud.Dob}}</td>
+                    <td>{{stud.Gender}}</td>
+                    <td>{{stud.course}}</td>
+                    <td>{{stud.parent_number_id}}</td>
+                    <td>{{stud.parent_name}}</td>
+                    
+                    <td>
+                    <button mat-raised-button color='primary'(click)="OnEdit()" >
+                        <mat-icon>
+                            edit
+                        </mat-icon>
+                    تعديل</button>
+                    <button mat-raised-button color='primary' (click)="OnDelete()" >
+                        <mat-icon>
+                            delete
+                        </mat-icon>
+                    حذف</button>
+    
+                    </td>
+                </tr>
+            </tbody>
+           
+            
+        </table>
+        
+
+    </mat-card-content>
+
+</mat-card>
+
+
 
 

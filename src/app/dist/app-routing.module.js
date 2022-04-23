@@ -16,10 +16,10 @@ var edit_class_component_1 = require("./pages/course/edit-class/edit-class.compo
 var course_teacherform_component_1 = require("./pages/course_enr/course-teacherform/course-teacherform.component");
 var examform_component_1 = require("./pages/exam/examform/examform.component");
 var dashbord_component_1 = require("./pages/home/dashbord/dashbord.component");
-var student_table_component_1 = require("./pages/students/student-table/student-table.component");
+var student_add_component_1 = require("./pages/students/student-add/student-add.component");
 var students_form_component_1 = require("./pages/students/students-form/students-form.component");
-var create_student_component_1 = require("./pages/subject/create-student/create-student.component");
 var subject_form_component_1 = require("./pages/subject/subject-form/subject-form.component");
+var create_teacher_component_1 = require("./pages/teachers/create-teacher/create-teacher.component");
 var edit_teachers_component_1 = require("./pages/teachers/edit-teachers/edit-teachers.component");
 var teachers_form_component_1 = require("./pages/teachers/teachers-form/teachers-form.component");
 var routes = [
@@ -64,16 +64,16 @@ var routes = [
                 component: edit_class_component_1.EditClassComponent
             },
             {
-                path: 'edit-taecher',
+                path: 'edit-teacher',
                 component: edit_teachers_component_1.EditTeachersComponent
             },
             {
-                path: 'create-student',
-                component: create_student_component_1.CreateStudentComponent
+                path: 'student-add',
+                component: student_add_component_1.StudentAddComponent
             },
             {
-                path: 'student-table',
-                component: student_table_component_1.StudentTableComponent
+                path: 'add-teacher',
+                component: create_teacher_component_1.CreateTeacherComponent
             }
         ]
     }

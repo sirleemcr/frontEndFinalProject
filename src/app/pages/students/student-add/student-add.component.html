@@ -1,0 +1,84 @@
+<mat-card>
+    <mat-card-title>التلا ميذ</mat-card-title>
+    <mat-card-subtitle>اسستمارة تسجيل الطالب</mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            <button mat-raised-button color="primary" (click)="OnBack()">الى الخلف</button>
+          </div>
+          <form [formGroup]="studentForm" autocomplete="off">
+              
+              <div class="col-md-6">
+                  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                      <mat-label> إسم ألأولى</mat-label>
+                      <input matInput formControlName="FirstName" placeholder="name" value="name">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                      <mat-label>إسم  أخرى</mat-label>
+                      <input matInput formControlName="LastName" placeholder="name" value="name">
+                    </mat-form-field>
+                  
+              </div>
+          
+            <div class="col-md-6">
+              <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                  <mat-label> إسم أب</mat-label>
+                  <input matInput formControlName="MiddleName" placeholder="name" value="name">
+                </mat-form-field>
+              
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>مكآن تعيش</mat-label>
+                <input matInput formControlName="Place" placeholder="name" value="name">
+              </mat-form-field>
+            
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+              <mat-label> جنسية</mat-label>
+              <input matInput formControlName="Nationality" placeholder="name" value="name">
+            </mat-form-field>
+          
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+            <mat-label> تاريخ الولاد</mat-label>
+            <input matInput formControlName="Dob" placeholder="name" value="name">
+          </mat-form-field>
+        
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+          <mat-label>جنس</mat-label>
+          <input matInput formControlName="Gender" placeholder="name" value="name">
+        </mat-form-field>
+      
+  </div>
+  <div class="col-md-6">
+    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+        <mat-label> الراس</mat-label>
+        <input matInput formControlName="course_id" placeholder="name" value="name">
+      </mat-form-field>
+    
+</div>
+<div class="col-md-6">
+  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+      <mat-label> رققم هاتف الولد</mat-label>
+      <input matInput formControlName="parent_number" placeholder="name" value="name">
+    </mat-form-field>
+  
+</div>
+<div class="col-md-6">
+  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+      <mat-label>اإسم الوالد</mat-label>
+      <input matInput formControlName="parent_name" placeholder="name" value="name">
+    </mat-form-field>
+  
+</div> 
+          </form>
+          <button mat-raised-button color="primary" [disabled]="studentForm.invalid" (click)="Onsave()" >
+            <mat-icon>save</mat-icon>
+            حفظ
+          </button>
+    </mat-card-content>
+</mat-card>

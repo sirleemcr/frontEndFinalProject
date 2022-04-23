@@ -1,1 +1,40 @@
-<p>examform works!</p>
+<mat-card>
+    <mat-card-title>
+        Exam
+    </mat-card-title>
+    <div class="Add button">
+        <button mat-raised-button color="primary" (click)="AddExam()">  form of exam</button>
+    </div>
+    <mat-card-content>
+        <table class="table table-border">
+            <thead>
+                <tr>
+                    <th>Sn</th>
+                    <th>Exam-id</th>
+                    <th>subject id</th>
+                    <th>student registration</th>
+                    <th>marks</th>
+                    <th>grade</th>
+                    <th>result</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button mat-raised-button color="primary" (click)="OnUpdate()">update</button>
+                        <button mat-raised-button color="primary" (click)="OnDelete()">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </mat-card-content>
+</mat-card>

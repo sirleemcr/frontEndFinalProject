@@ -1,2 +1,44 @@
-<p>teachers-form works!</p>
-<button mat-raised-button (click)="OnEdit()"></button>
+<mat-card>
+    <mat-card-title>Teacher</mat-card-title>
+    <mat-card-subtitle> LIST OF Teacher</mat-card-subtitle>
+    <mat-card-content>
+        <button mat-raised-button color="primary" (click)="OnAdd()"> Add Teacher</button>
+        <table class="table table-border">
+          <thead>
+              <tr>
+                  <th>Sn</th>
+                  <th>id</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Middle Name</th>
+                  <th>Gender</th>
+                  <th>place</th>
+                  <th>phone number</th>
+                  <th>email</th>
+                  <th>nationality</th>
+                  <th>Action</th>
+
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>tt</td>
+                  <td>tt</td>
+                  <td>tt</td>
+                  <td>tt</td>
+                  <td>ff</td>
+                  <td>tt</td>
+                  <td>tt</td>
+                  <td>tt</td>
+                  <td>ff</td>
+                  <td>hh</td>
+                  <td>
+                      <button mat-raised-button color="primary" (click)="OnEdit()">Edit</button>
+                      <button mat-raised-button color="primary" (click)="OnDelete()">Delete</button>
+                  </td>
+
+              </tr>
+          </tbody>
+        </table>
+    </mat-card-content>
+</mat-card>

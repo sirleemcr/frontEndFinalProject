@@ -5,12 +5,15 @@ import { CourseTableComponent } from './pages/course/course-table/course-table.c
 import { CreateClassComponent } from './pages/course/create-class/create-class.component';
 import { EditClassComponent } from './pages/course/edit-class/edit-class.component';
 import { CourseTeacherformComponent } from './pages/course_enr/course-teacherform/course-teacherform.component';
+import { AddExamComponent } from './pages/exam/add-exam/add-exam.component';
 import { ExamformComponent } from './pages/exam/examform/examform.component';
 import { DashbordComponent } from './pages/home/dashbord/dashbord.component';
-import { StudentTableComponent } from './pages/students/student-table/student-table.component';
+import { StudentAddComponent } from './pages/students/student-add/student-add.component';
 import { StudentsFormComponent } from './pages/students/students-form/students-form.component';
-import { CreateStudentComponent } from './pages/subject/create-student/create-student.component';
+import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.component';
+import { EditSubjectComponent } from './pages/subject/edit-subject/edit-subject.component';
 import { SubjectFormComponent } from './pages/subject/subject-form/subject-form.component';
+import { CreateTeacherComponent } from './pages/teachers/create-teacher/create-teacher.component';
 import { EditTeachersComponent } from './pages/teachers/edit-teachers/edit-teachers.component';
 import { TeachersFormComponent } from './pages/teachers/teachers-form/teachers-form.component';
 
@@ -61,17 +64,30 @@ const routes: Routes = [
       component:EditClassComponent
     },
     {
-      path:'edit-taecher',
+      path:'edit-teacher',
       component:EditTeachersComponent
     },
-     {
-       path:'create-student',
-       component:CreateStudentComponent
-     },
-     {
-       path:'student-table',
-       component:StudentTableComponent
-     }
+    {
+      path:'student-add',
+      component:StudentAddComponent
+    },
+    {
+      path:'add-teacher',
+      component:CreateTeacherComponent
+    },{
+      path:'add-exam',
+      component:AddExamComponent
+    },
+    {
+      path:'add-subject',
+      component:AddSubjectComponent
+    },
+    {
+      path:'edit-subject',
+      component:EditSubjectComponent
+    }
+     
+    
     
     ]
   }

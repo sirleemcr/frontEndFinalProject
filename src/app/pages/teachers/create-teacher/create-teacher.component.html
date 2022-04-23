@@ -1,1 +1,71 @@
-<p>create-teacher works!</p>
+<mat-card>
+    <mat-card-title>Add teacher</mat-card-title>
+    <div class="back">
+        <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
+    </div>
+    <mat-card-content>
+        <div class="form">
+            <form [formGroup]="addFormTeacher" autocomplete="off">
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="FirstName" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="LastName" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="MiddleName" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="Place" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="Nationality" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="Gender" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="phone_number" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                        <mat-label> Class Name</mat-label>
+                        <input matInput formControlName="email" placeholder="name" value="name">
+                      </mat-form-field>
+                    
+                </div>
+            </form>
+            <div class="back">
+                <button mat-raised-button color="primary" [disabled]="addFormTeacher.invalid" (click)="OnSave()">save</button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

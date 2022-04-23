@@ -25,7 +25,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateClassComponent } from './pages/course/create-class/create-class.component';
 import { EditClassComponent } from './pages/course/edit-class/edit-class.component';
 import {MatInputModule} from '@angular/material/input';
-import { CreateStudentComponent } from './pages/students/create-student/create-student.component';
 import { EditStudentComponent } from './pages/students/edit-student/edit-student.component';
 import { CreateTeacherComponent } from './pages/teachers/create-teacher/create-teacher.component';
 import { EditTeachersComponent } from './pages/teachers/edit-teachers/edit-teachers.component';
@@ -35,6 +34,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { StudentTableComponent } from './pages/students/student-table/student-table.component';
+import { StudentAddComponent } from './pages/students/student-add/student-add.component';
+import { AddExamComponent } from './pages/exam/add-exam/add-exam.component';
+import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.component';
 
 
 
@@ -53,12 +55,14 @@ import { StudentTableComponent } from './pages/students/student-table/student-ta
     CourseTableComponent,
     CreateClassComponent,
     EditClassComponent,
-    CreateStudentComponent,
     EditStudentComponent,
     CreateTeacherComponent,
     EditTeachersComponent,
     EditSubjectComponent,
     StudentTableComponent,
+    StudentAddComponent,
+    AddExamComponent,
+    AddSubjectComponent,
 
     
   ],
