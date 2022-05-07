@@ -1,0 +1,30 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SubjectService {
+  private apiUrl:string='http://localhost:8089/su'
+
+  constructor(private http:HttpClient) { }
+
+
+  getAll(){
+    return this.http.get(this.apiUrl+"/subject");
+  }
+
+  add(body:any){
+    return this.http.post(this.apiUrl+"/su1",body);
+  }
+  update(body:any){
+    return this.http.put(this.apiUrl+"/edit",body)
+  }
+  getById(id:number){
+    return this.http.get(this.apiUrl+'/subject'+'/'+id)
+  }
+
+  delete(id:number){
+    return this.http.delete(this.apiUrl+'/delete'+'/'+id)
+  }
+}

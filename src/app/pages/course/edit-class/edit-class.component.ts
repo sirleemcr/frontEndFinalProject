@@ -17,8 +17,8 @@ export class EditClassComponent implements OnInit {
 
   configureCreateForm(){
     this.editForm=new FormGroup({
-      course_id:new FormControl(null),
-      course_name: new FormControl(null,Validators.required)
+      id:new FormControl(null),
+      swaful_name: new FormControl(null,Validators.required)
     });
   }
   
@@ -28,17 +28,17 @@ export class EditClassComponent implements OnInit {
     this.configureCreateForm();
     this.route.params.subscribe((parasValues:any)=>{
       console.log('nahuu ',parasValues);
-       const course_id=parasValues.course_id;
-       this.fetchClassById(course_id);
+       const id=parasValues.id;
+       this.fetchClassById(id);
     });
     
   }
 
-  fetchClassById(course_id :number){
-    this.classervices.getById(course_id).subscribe((response:any)=>{
+  fetchClassById(swaful_id :number){
+    this.classervices.getById(swaful_id).subscribe((response:any)=>{
       console.log('bingo', response);
-      this.editForm.get('course_id')?.setValue(response.course_id);
-      this.editForm.get('course_name')?.setValue(response.course_name);
+      this.editForm.get('id')?.setValue(response.id);
+      this.editForm.get('swaful_name')?.setValue(response.swaful_name);
     },(error:HttpErrorResponse)=>{
       console.log('mmeapata erreor',error)
     }
@@ -47,6 +47,7 @@ export class EditClassComponent implements OnInit {
   }
   OnChange(){
     const values =this.editForm.value;
+    console.log(values)
    this.classervices.update(values).subscribe((response)=>{
     this.router.navigateByUrl('/coursetable');
    },error =>{

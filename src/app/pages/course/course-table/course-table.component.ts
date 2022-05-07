@@ -28,7 +28,7 @@ date = Date()
 
   }
   OnEdit(classes:any){
-    this.router.navigateByUrl('/edit-class/'+classes.course_id)
+    this.router.navigateByUrl('/edit-class/'+classes.id)
 
   }
 

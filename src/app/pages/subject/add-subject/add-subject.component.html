@@ -7,13 +7,49 @@
         <div class="col-md-6">
         <mat-form-field appearance="outline" class=" w-100 example-full-width" >
             <mat-label> Subject Name</mat-label>
-            <input matInput formControlName="course_name" placeholder="name" value="name">
+            <input matInput formControlName="subject_name" placeholder="subject_name" value="subject_name">
           </mat-form-field>
           </div>
 
+
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>ustadh</mat-label>
+                <mat-select formControlName="ustaadh_id">
+                  <mat-option *ngFor="let ustadh of UstadhView" [value]="ustadh.id">
+                    {{ustadh.firstName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Fitrah</mat-label>
+                <mat-select formControlName="fitrah_id">
+                  <mat-option *ngFor="let fit of fitrahView" [value]="fit.id">
+                    {{fit.fitrah_name}}
+                  </mat-option>
+                </mat-select> 
+              </mat-form-field>
+              
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>SWAFUL</mat-label>
+                <mat-select formControlName="swaful_id">
+                  <mat-option *ngFor="let sw of swafulView" [value]="sw.id">
+                    {{sw.swaful_name}}
+                  </mat-option>
+                </mat-select> 
+              </mat-form-field>
+              
+          </div>
+
         </form>
+
         <div>
-            <button mat-raised-button color="Primary" [disabled]="addsubjectform.invalid" (click)="OnAdd()">Add</button>
+            <button mat-raised-button color="Primary" (click)="OnAdd()">Add</button>
         </div>
     </mat-card-content>
 </mat-card>

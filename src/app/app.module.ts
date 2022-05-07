@@ -15,7 +15,6 @@ import { MatListModule } from '@angular/material/list';
 import { StudentsFormComponent } from './pages/students/students-form/students-form.component';
 import { TeachersFormComponent } from './pages/teachers/teachers-form/teachers-form.component';
 import { SubjectFormComponent } from './pages/subject/subject-form/subject-form.component';
-import { CourseTeacherformComponent } from './pages/course_enr/course-teacherform/course-teacherform.component';
 import { ExamformComponent } from './pages/exam/examform/examform.component';
 import { DashbordComponent } from './pages/home/dashbord/dashbord.component';
 import { CourseTableComponent } from './pages/course/course-table/course-table.component';
@@ -37,6 +36,12 @@ import { StudentTableComponent } from './pages/students/student-table/student-ta
 import { StudentAddComponent } from './pages/students/student-add/student-add.component';
 import { AddExamComponent } from './pages/exam/add-exam/add-exam.component';
 import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.component';
+import { FitrahtbComponent } from './pages/fitrah/fitrahtb/fitrahtb.component';
+import { FitrahAddComponent } from './pages/fitrah/fitrah-add/fitrah-add.component';
+import { FitrahEditComponent } from './pages/fitrah/fitrah-edit/fitrah-edit.component';
+import {MatSelectModule } from '@angular/material/select';
+import { AdminComponent } from './pages/admin/admin.component';
+import { LogOutComponent } from './pages/log-out/log-out.component';
 
 
 
@@ -49,7 +54,6 @@ import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.com
     StudentsFormComponent,
     TeachersFormComponent,
     SubjectFormComponent,
-    CourseTeacherformComponent,
     ExamformComponent,
     DashbordComponent,
     CourseTableComponent,
@@ -63,6 +67,11 @@ import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.com
     StudentAddComponent,
     AddExamComponent,
     AddSubjectComponent,
+    FitrahtbComponent,
+    FitrahAddComponent,
+    FitrahEditComponent,
+    AdminComponent,
+    LogOutComponent,
 
     
   ],
@@ -84,6 +93,7 @@ import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.com
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSelectModule
     
   ],
   providers: [],

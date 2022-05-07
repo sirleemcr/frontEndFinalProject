@@ -1,13 +1,13 @@
 <mat-card>
-    <mat-card-title>Teacher</mat-card-title>
-    <mat-card-subtitle> LIST OF Teacher</mat-card-subtitle>
+    <mat-card-title>USTAADH</mat-card-title>
+    <mat-card-subtitle> LIST OF USTAADH</mat-card-subtitle>
     <mat-card-content>
         <button mat-raised-button color="primary" (click)="OnAdd()"> Add Teacher</button>
         <table class="table table-border">
           <thead>
               <tr>
                   <th>Sn</th>
-                  <th>id</th>
+                  <th>Registration number</th>
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Middle Name</th>
@@ -21,19 +21,19 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td>tt</td>
-                  <td>tt</td>
-                  <td>tt</td>
-                  <td>tt</td>
-                  <td>ff</td>
-                  <td>tt</td>
-                  <td>tt</td>
-                  <td>tt</td>
-                  <td>ff</td>
-                  <td>hh</td>
+              <tr *ngFor="let Ustaadhes of teacherForm, let x=index">
+                  <td>{{x+1}}</td>
+                  <td>{{Ustaadhes.id}}</td>
+                  <td>{{Ustaadhes.firstName}}</td>
+                  <td>{{Ustaadhes.lastName}}</td>
+                  <td>{{Ustaadhes.middleName}}</td>
+                  <td>{{Ustaadhes.gender}}</td>
+                  <td>{{Ustaadhes.place}}</td>
+                  <td>{{Ustaadhes.phone_number}}</td>
+                  <td>{{Ustaadhes.email}}</td>
+                  <td>{{Ustaadhes.nationality}}</td>
                   <td>
-                      <button mat-raised-button color="primary" (click)="OnEdit()">Edit</button>
+                      <button mat-raised-button color="primary" (click)="OnEdit(Ustaadhes)">Edit</button>
                       <button mat-raised-button color="primary" (click)="OnDelete()">Delete</button>
                   </td>
 

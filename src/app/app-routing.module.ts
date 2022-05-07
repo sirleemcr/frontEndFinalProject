@@ -1,13 +1,18 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { AdminComponent } from './pages/admin/admin.component';
 import { CourseTableComponent } from './pages/course/course-table/course-table.component';
 import { CreateClassComponent } from './pages/course/create-class/create-class.component';
 import { EditClassComponent } from './pages/course/edit-class/edit-class.component';
-import { CourseTeacherformComponent } from './pages/course_enr/course-teacherform/course-teacherform.component';
 import { AddExamComponent } from './pages/exam/add-exam/add-exam.component';
 import { ExamformComponent } from './pages/exam/examform/examform.component';
+import { FitrahAddComponent } from './pages/fitrah/fitrah-add/fitrah-add.component';
+import { FitrahEditComponent } from './pages/fitrah/fitrah-edit/fitrah-edit.component';
+import { FitrahtbComponent } from './pages/fitrah/fitrahtb/fitrahtb.component';
 import { DashbordComponent } from './pages/home/dashbord/dashbord.component';
+import { LogOutComponent } from './pages/log-out/log-out.component';
+import { EditStudentComponent } from './pages/students/edit-student/edit-student.component';
 import { StudentAddComponent } from './pages/students/student-add/student-add.component';
 import { StudentsFormComponent } from './pages/students/students-form/students-form.component';
 import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.component';
@@ -45,11 +50,7 @@ const routes: Routes = [
         path:'exam',
         component:ExamformComponent
       },
-      {
-        path:'t.co',
-        component:CourseTeacherformComponent
-      }
-    ,
+      
     {
       path:'coursetable',
       component:CourseTableComponent
@@ -60,11 +61,11 @@ const routes: Routes = [
       component:CreateClassComponent
     },
     {
-      path:'edit-class/:course_id',
+      path:'edit-class/:id',
       component:EditClassComponent
     },
     {
-      path:'edit-teacher',
+      path:'edit-teacher/:ustaadh_id',
       component:EditTeachersComponent
     },
     {
@@ -83,8 +84,32 @@ const routes: Routes = [
       component:AddSubjectComponent
     },
     {
-      path:'edit-subject',
+      path:'edit-subject/:id',
       component:EditSubjectComponent
+    },
+    {
+      path:'edit-student/:tilmydh_id',
+      component:EditStudentComponent
+    },
+    {
+      path:'fitrah',
+      component:FitrahtbComponent
+    },
+    {
+      path:'fitrah-add',
+      component:FitrahAddComponent
+    },
+    {
+      path:'fitrah-edit/:fitrah_id',
+      component:FitrahEditComponent
+    },
+    {
+      path:'admin',
+      component:AdminComponent
+    },
+    {
+      path:'log-out',
+      component:LogOutComponent
     }
      
     

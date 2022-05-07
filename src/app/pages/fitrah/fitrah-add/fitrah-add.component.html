@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title>FITRAH ADD FORM </mat-card-title>
+    <mat-card-content>
+        <div class="back">
+            <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
+        </div>
+        <div class="form">
+            <form [formGroup]="FitrahForm" autocomplete="off">
+                <div class="col-md-6">
+                    <div class="row-md-3">
+                        <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                            <mat-label>fitrah Name</mat-label>
+                            <input matInput formControlName="fitrah_name" placeholder="fitrah name" value="fitrah name">
+                          </mat-form-field>
+                    </div>
+
+                    <div class="row-md-3">
+                        <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                            <mat-label>year</mat-label>
+                            <input matInput formControlName="year" placeholder="year" value="year">
+                          </mat-form-field>
+                    </div>
+                </div>
+            </form>
+            <div class="Savebutton">
+                <button mat-raised-button color="primary" [disabled]="FitrahForm.invalid" (click)="OnSave()">Save</button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

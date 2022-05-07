@@ -4,65 +4,48 @@
     <div class="date">
         {{date | date: 'dd - MMM-YYY     HH.mm'  }}
     </div>
-    <mat-card-title>الطلاب</mat-card-title>
-    <mat-card-subtitle>قاءمة الطلاب</mat-card-subtitle>
+    <mat-card-title>Tilmiydh</mat-card-title>
+    <mat-card-subtitle> list of Tilmiydh</mat-card-subtitle>
     <mat-card-content>
         <div>
-            <button mat-raised-button color="accent" (click)="OnCreate()">أدخل الطلاب</button>
+            <button mat-raised-button color="accent" (click)="OnCreate()">add tilmydh</button>
         </div>
         <table class="table table-border">
             <thead>
-                <tr >
-                    <th>رقم سري</th>
-                    <th>رقم التسجيل</th>
-                    <th>إسم الطلاب</th>
-                    <Th>إسم جده</Th>
-                     <th>إسم أب</th>
-                    <th>ترييخ الميلاد</th>
-                    <th>مكان</th>
-                    <th>جنسية</th>
-                    <th>جنس</th>
-                    <th>الدراس</th>
-                    <th>إسم وآلد</th>
-                    <th>رققم هاتف وآلد</th>
-                    <th>Action</th>
-                </tr>
+                <th>SN</th>
+                <th>Tilmiydh Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Middle Name</th>
+                <th>Gender</th>
+                <th>Place</th>
+                <th>Nationality</th>
+                <th>Swaful</th>
+                <th>Parent Name</th>
+                <th>Parent Number</th>
+                <th>ACTION</th>
+
             </thead>
             <tbody>
-                <tr *ngFor="let stud  of studentList,let y=index">
-                    <td>{{y+1}}<td>
-                    <td>{{stud.id}}</td>
-                    <td>{{stud.FirstName}}</td>
-                    <td>{{stud.LastName}}</td>
-                    <td>{{stud.MiddleName}}</td>
-                    <td>{{stud.Place}}</td>
-                    <td>{{stud.Nationality}}</td>
-                    <td>{{stud.Dob}}</td>
-                    <td>{{stud.Gender}}</td>
-                    <td>{{stud.course}}</td>
-                    <td>{{stud.parent_number_id}}</td>
+                <tr *ngFor="let stud of studentList let y = index">
+                    <td>{{y+1}}</td>
+                    <td>{{stud.tilmydh_id}}</td>
+                    <td>{{stud.firstName}}</td>
+                    <td>{{stud.lastName}}</td>
+                    <td>{{stud.middleName}}</td>
+                    <td>{{stud.gender}}</td>
+                    <td>{{stud.place}}</td>
+                    <td>{{stud.nationality}}</td>
+                    <td>{{stud.swaful_id}}</td>
                     <td>{{stud.parent_name}}</td>
-                    
+                    <td>{{stud.parent_number}}</td>
                     <td>
-                    <button mat-raised-button color='primary'(click)="OnEdit()" >
-                        <mat-icon>
-                            edit
-                        </mat-icon>
-                    تعديل</button>
-                    <button mat-raised-button color='primary' (click)="OnDelete()" >
-                        <mat-icon>
-                            delete
-                        </mat-icon>
-                    حذف</button>
-    
+                        <button mat-raised-button color="primary" (click)="OnEdit(stud)">Edit</button>
+                        <button mat-raised-button color="primary" (click)="OnDelete(stud.id)">delete</button>
                     </td>
                 </tr>
             </tbody>
-           
-            
         </table>
-        
-
     </mat-card-content>
 
 </mat-card>

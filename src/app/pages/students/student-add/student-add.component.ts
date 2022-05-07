@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,7 +14,7 @@ export class StudentAddComponent implements OnInit {
   date=Date();
   studentForm !:FormGroup;
 
-  constructor(private router :Router,private studentservice : StudentsService,) { }
+  constructor(private router :Router,private studentservice : StudentsService) { }
 
   ngOnInit(): void {
     this.studentFormConfigure()
@@ -22,14 +23,13 @@ export class StudentAddComponent implements OnInit {
 
   studentFormConfigure(){
     this.studentForm = new FormGroup({
-      FirstName:new FormControl(null,Validators.required),
-      LastName:new FormControl  (null,Validators.required),
-      MiddleName:new FormControl(null,Validators.required),
-      Place:new FormControl(null,Validators.required),
-      Nationality: new FormControl(null,Validators.required),
-      Dob: new FormControl(null,Validators.required),
-      Gender: new FormControl(null,Validators.required),
-      course_id:new FormControl(null,Validators.required),
+      firstName:new FormControl(null,Validators.required),
+      lastName: new FormControl(null,Validators.required),
+      middleName:new FormControl(null,Validators.required),
+      place:new FormControl(null,Validators.required),
+      nationality:new FormControl(null, Validators.required),
+      gender:new FormControl(null,Validators.required),
+      swaful_id:new FormControl(null,Validators.required),
       parent_number:new FormControl(null,Validators.required),
       parent_name:new FormControl(null,Validators.required)
     })
@@ -42,6 +42,17 @@ export class StudentAddComponent implements OnInit {
   }
 
   Onsave(){
+    const values=this.studentForm.value;
+    console.log('student',values);
+    this.studentservice.add(values).subscribe((response:any)=>{
+      console.log('create student =>',response);
+      alert('saved')
+      this.router.navigateByUrl('/student');
+    },
+    (error:HttpErrorResponse)=>{
+     console.log(error);
+    }
+    )
     
   }
 

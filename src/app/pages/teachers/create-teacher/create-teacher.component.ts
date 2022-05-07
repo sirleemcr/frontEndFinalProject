@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
 
 @Component({
   selector: 'app-create-teacher',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class CreateTeacherComponent implements OnInit {
   addFormTeacher !:FormGroup
 
-  constructor(private router:Router) {
+  constructor(private router:Router,private ustaadhservice:UstadhService) {
  
    }
 
@@ -20,14 +22,14 @@ export class CreateTeacherComponent implements OnInit {
 
   addFormTeacherConfig(){
     this.addFormTeacher=new FormGroup({
-      FirstName:new FormControl(null,Validators.required),
-      LastName: new FormControl(null,Validators.required),
-      MiddleName:new FormControl(null,Validators.required),
-      Place:new FormControl(null,Validators.required),
-      Nationality:new FormControl(null, Validators.required),
-      Gender:new FormControl(null,Validators.required),
+      firstName:new FormControl(null,Validators.required),
+      lastName: new FormControl(null,Validators.required),
+      middleName:new FormControl(null,Validators.required),
+      place:new FormControl(null,Validators.required),
+      nationality:new FormControl(null, Validators.required),
+      gender:new FormControl(null,Validators.required),
       phone_number:new FormControl(null,Validators.required),
-      email:new FormControl(null,Validators.required)
+      email:new FormControl(null,Validators.email)
     })
 
   }
@@ -36,6 +38,17 @@ export class CreateTeacherComponent implements OnInit {
     this.router.navigateByUrl('/teacher')
   }
   OnSave(){
+    const values=this.addFormTeacher.value;
+    console.log('ustaadh =>', values);
+    this.ustaadhservice.add(values).subscribe((response:any)=>{
+      console.log('create ustaadh =>',response);
+      alert('saved')
+      this.router.navigateByUrl('/teacher');
+    },
+    (error:HttpErrorResponse)=>{
+     console.log(error);
+    }
+    )
     
   }
 

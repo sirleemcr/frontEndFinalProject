@@ -5,34 +5,34 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StudentsService {
-  private sapiUrl:string ='http://localhost:8089/s'
+  private sapiUrl:string ='http://localhost:8089/t'
 
 
   constructor(private http:HttpClient) { }
   getAll(){
-    return this.http.get(this.sapiUrl+"/student");
+    return this.http.get(this.sapiUrl+"/tilmydh");
   }
 
 
 
-  // add(body:any){
-  //   return this.http.post(this.sapiUrl+"/",body);
-  // }
+  add(body:any){
+   return this.http.post(this.sapiUrl+"/t1",body);
+   }
 
 
 
-  // update(body:any){
-  //   return this.http.put(this.sapiUrl+"/edit",body);
+  update(body:any){
+    return this.http.put(this.sapiUrl+"/edit",body);
 
-  // }
+  }
 
 
 
-  // getById(course_id:number){
-  //   return this.http.get(this.sapiUrl+"/course"+'/'+course_id); 
-  // }
+  getById(tilmydh_id:number){
+    return this.http.get(this.sapiUrl+"/tilmydh"+'/'+tilmydh_id); 
+   }
 
-  // delete(id:number){
-  //   return this.http.delete(this.sapiUrl+"/delete"+'/'+id);
-  // }
+  delete(tilmydh_id:number){
+   return this.http.delete(this.sapiUrl+"/delete"+'/'+tilmydh_id);
+  }
 }

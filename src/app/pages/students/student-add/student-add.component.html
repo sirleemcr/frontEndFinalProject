@@ -1,84 +1,97 @@
 <mat-card>
-    <mat-card-title>التلا ميذ</mat-card-title>
-    <mat-card-subtitle>اسستمارة تسجيل الطالب</mat-card-subtitle>
+    <mat-card-title>
+      tilmydh
+    </mat-card-title>
+    <mat-card-subtitle>
+        Tilmydh Registration Form
+    </mat-card-subtitle>
     <mat-card-content>
-        <div>
-            <button mat-raised-button color="primary" (click)="OnBack()">الى الخلف</button>
-          </div>
-          <form [formGroup]="studentForm" autocomplete="off">
-              
-              <div class="col-md-6">
-                  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                      <mat-label> إسم ألأولى</mat-label>
-                      <input matInput formControlName="FirstName" placeholder="name" value="name">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                      <mat-label>إسم  أخرى</mat-label>
-                      <input matInput formControlName="LastName" placeholder="name" value="name">
-                    </mat-form-field>
-                  
-              </div>
-          
+      <div>
+        <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
+      </div>
+      <form [formGroup]="studentForm" autocomplete="off">
+        <tr>
+          <td> 
             <div class="col-md-6">
-              <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                  <mat-label> إسم أب</mat-label>
-                  <input matInput formControlName="MiddleName" placeholder="name" value="name">
+              <div class="row">
+                <mat-form-field appearance="outline" class="row" >
+                  <mat-label>First Name</mat-label>
+                  <input matInput formControlName="firstName" placeholder="FirstName" value="FirstName">
                 </mat-form-field>
-              
-          </div>
-          <div class="col-md-6">
-            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                <mat-label>مكآن تعيش</mat-label>
-                <input matInput formControlName="Place" placeholder="name" value="name">
-              </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="row" >
+                  <mat-label>Last Name</mat-label>
+                  <input matInput formControlName="lastName" placeholder="lastName" value="lastName">
+                </mat-form-field>
+              </div>
+                    
+            </div>
+          </td>
+          <td>
+            <div class="col-md-6">
+              <div class="row-md-3">
+                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>Middle Name</mat-label>
+                <input matInput formControlName="middleName" placeholder="middleName" value="middleName">
+                </mat-form-field>
+              </div>
+              <div class="row-md-3">
+                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                    <mat-label>Place</mat-label>
+                    <input matInput formControlName="place" placeholder="place" value="place">
+                  </mat-form-field>
+              </div>
+              <div class="col">
+                
+              </div>
+            </div>
+          </td>
+        </tr>
+        
+       
+          
             
-        </div>
+        
         <div class="col-md-6">
           <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-              <mat-label> جنسية</mat-label>
-              <input matInput formControlName="Nationality" placeholder="name" value="name">
+              <mat-label> Gender</mat-label>
+              <input matInput formControlName="gender" placeholder="name" value="name">
             </mat-form-field>
           
       </div>
-      <div class="col-md-6">
-        <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-            <mat-label> تاريخ الولاد</mat-label>
-            <input matInput formControlName="Dob" placeholder="name" value="name">
-          </mat-form-field>
         
-    </div>
     <div class="col-md-6">
       <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-          <mat-label>جنس</mat-label>
-          <input matInput formControlName="Gender" placeholder="name" value="name">
+          <mat-label>Nationality</mat-label>
+          <input matInput formControlName="nationality" placeholder="nationality" value="nationality">
         </mat-form-field>
       
   </div>
   <div class="col-md-6">
     <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-        <mat-label> الراس</mat-label>
-        <input matInput formControlName="course_id" placeholder="name" value="name">
+        <mat-label>Faswlu</mat-label>
+        <input matInput formControlName="swaful_id" placeholder="faswlu" value="faswlu">
       </mat-form-field>
     
 </div>
 <div class="col-md-6">
   <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-      <mat-label> رققم هاتف الولد</mat-label>
-      <input matInput formControlName="parent_number" placeholder="name" value="name">
+      <mat-label>Parent number</mat-label>
+      <input matInput formControlName="parent_number" placeholder="number" value="number">
     </mat-form-field>
   
 </div>
 <div class="col-md-6">
   <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-      <mat-label>اإسم الوالد</mat-label>
-      <input matInput formControlName="parent_name" placeholder="name" value="name">
+      <mat-label>Parent Name</mat-label>
+      <input matInput formControlName="parent_name" placeholder="parent_name" value="parent_name">
     </mat-form-field>
   
 </div> 
           </form>
           <button mat-raised-button color="primary" [disabled]="studentForm.invalid" (click)="Onsave()" >
             <mat-icon>save</mat-icon>
-            حفظ
+            save
           </button>
     </mat-card-content>
 </mat-card>

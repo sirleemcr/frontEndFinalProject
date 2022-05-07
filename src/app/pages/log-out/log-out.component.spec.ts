@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CourseTeacherformComponent } from './course-teacherform.component';
+import { LogOutComponent } from './log-out.component';
 
-describe('CourseTeacherformComponent', () => {
-  let component: CourseTeacherformComponent;
-  let fixture: ComponentFixture<CourseTeacherformComponent>;
+describe('LogOutComponent', () => {
+  let component: LogOutComponent;
+  let fixture: ComponentFixture<LogOutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CourseTeacherformComponent ]
+      declarations: [ LogOutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CourseTeacherformComponent);
+    fixture = TestBed.createComponent(LogOutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

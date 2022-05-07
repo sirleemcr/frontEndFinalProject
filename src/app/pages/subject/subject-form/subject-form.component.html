@@ -10,17 +10,23 @@
                     <th>Sn</th>
                     <th>id</th>
                     <th>subject name</th>
+                    <th>AL-USTAADH</th>
+                    <th>AL-FITRAH</th>
+                    <th>AL-SWAFUL</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr *ngFor="let ust of subjectTable,let x=index">
+                    <td>{{x+1}}</td>
+                    <td>{{ust.id}}</td>
+                    <td>{{ust.subject_name}}</td>
+                    <td>{{ust.ustaadh_id}}</td>
+                    <td>{{ust.fitrah_id}}</td>
+                    <td>{{ust.swaful_id}}</td>
                     <td>
-                        <button mat-raised-button color="primary" (click)="OnUpdate()">update</button>
-                        <button mat-raised-button color="primary" (click)="OnDelete()">delete</button>
+                        <button mat-raised-button color="primary" (click)="OnUpdate(ust)">update</button>
+                        <button mat-raised-button color="primary" (click)="OnDelete(ust.id)">delete</button>
                     </td>
                 </tr>
             </tbody>

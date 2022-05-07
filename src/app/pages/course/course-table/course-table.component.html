@@ -20,15 +20,15 @@
             <tbody>
                 <tr *ngFor="let classes of classList,let x=index">
                     <td>{{x+1}}</td>
-                    <td>{{classes.course_id}}</td>
-                    <td>{{classes.course_name}}</td>
+                    <td>{{classes.swaful_id}}</td>
+                    <td>{{classes.swaful_name}}</td>
                     <td>
                     <button mat-raised-button color='primary'(click)="OnEdit(classes)" >
                         <mat-icon>
                             edit
                         </mat-icon>
                     edit</button>
-                    <button mat-raised-button color='primary' (click)="Ondelete(classes.course_id)" >
+                    <button mat-raised-button color='primary' (click)="Ondelete(classes.swaful_id)" >
                         <mat-icon>
                             delete
                         </mat-icon>

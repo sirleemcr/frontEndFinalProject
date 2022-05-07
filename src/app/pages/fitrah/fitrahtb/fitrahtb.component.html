@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>
+        Fitrah
+    </mat-card-title>
+    <mat-card-content>
+        <div class="addbutton">
+            <button mat-raised-button color="primary" (click)="OnAdd()"> Add Fitrah</button>
+        </div>
+        <div class="table">
+            <table class="table table-border">
+                <thead>
+                    <tr>
+                        <th>Sn</th>
+                        <th>Fitrah id</th>
+                        <th>Fitrah Name</th>
+                         <th>Year</th>
+                         <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fit of fitrahList,let x=index">
+                        <td>{{x+1}}</td>
+                        <td>{{fit.fitrah_id}}</td>
+                        <td>{{fit.fitrah_name}}</td>
+                        <td>{{fit.year}}</td>
+                        <td>
+                            <button mat-raised-button color="primary" (click)="OnUpdate(fit)">edit</button>
+                            <button mat-raised-button color="primary" (click)="OnDelete(fit.fitrah_id)">delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card-content>
+</mat-card>

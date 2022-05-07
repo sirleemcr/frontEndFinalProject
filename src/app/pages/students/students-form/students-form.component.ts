@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentsService } from 'src/app/services/student/students.service';
 
 @Component({
@@ -12,10 +12,10 @@ export class StudentsFormComponent implements OnInit {
   date= Date();
   
 
-  constructor(private router :Router,private studentservice :StudentsService) { }
+  constructor(private route :Router,private studentservice :StudentsService,private router:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.fetchAllStudent();
+    this.fetchAllStudent()
   }
 
   
@@ -29,16 +29,21 @@ fetchAllStudent(){
 }
 
   OnCreate(){
-    this.router.navigateByUrl('/student-add');
+    this.route.navigateByUrl('/student-add');
   }
 
   
-  OnEdit(){
+  OnEdit(stud:any){
+    this.route.navigateByUrl('/edit-student/'+stud.tilmydh_id)
 
   }
 
-  OnDelete(){
-    
+
+  OnDelete(id:number){
+    this.studentservice.delete(id).subscribe(res =>{
+      this.fetchAllStudent;
+      
+    })
   }
 
 }

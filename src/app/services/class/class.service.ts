@@ -5,16 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ClassService {
-  private apiUrl:string='http://localhost:8089/c';
+  private apiUrl:string='http://localhost:8089/s';
   constructor(private http:HttpClient) { }
   getAll(){
-    return this.http.get(this.apiUrl+"/course");
+    return this.http.get(this.apiUrl+"/swaful");
   }
 
 
 
   add(body:any){
-    return this.http.post(this.apiUrl+"/c1",body);
+    return this.http.post(this.apiUrl+"/s1",body);
   }
 
 
@@ -26,8 +26,9 @@ export class ClassService {
 
 
 
-  getById(course_id:number){
-    return this.http.get(this.apiUrl+"/course"+'/'+course_id); 
+  getById(swaful_id:number){
+    return this.http.get(this.apiUrl+"/swaful"+'/'+swaful_id); 
+    
   }
 
   delete(id:number){

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SubjectService } from 'src/app/services/subject/subject.service';
 
 @Component({
   selector: 'app-subject-form',
@@ -8,23 +9,37 @@ import { Router } from '@angular/router';
 })
 export class SubjectFormComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  subjectTable:any[]=[]
+
+  constructor(private route:Router,private subjectService:SubjectService) { }
 
   ngOnInit(): void {
+    this.fetchSubjectData();
+  
   }
+
+
+  fetchSubjectData(){
+    this.subjectService.getAll().subscribe((response:any)=>{
+      console.log('subject =>',response)
+      this.subjectTable=response;
+    })
+  }
+
 
   OnAdd(){
     this.route.navigateByUrl('/add-subject')
   }
 
-  OnEdit(){
 
+  OnUpdate(ust:any){
+   this.route.navigateByUrl('/edit-subject/'+ust.ustaadh_id)
   }
-  OnUpdate(){
-   this.route.navigateByUrl('/edit-subject')
-  }
-  OnDelete(){
-
+  OnDelete(id:any){
+    this.subjectService.delete(id).subscribe((response)=>{
+      this.fetchSubjectData();
+      console.log("deleted succesful")
+    })
   }
 
 }

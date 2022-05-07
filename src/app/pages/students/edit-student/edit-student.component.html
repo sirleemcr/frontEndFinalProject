@@ -1,1 +1,86 @@
-<p>edit-student works!</p>
+<mat-card>
+    <mat-card-title>
+        Update information of Tilmiydh
+    </mat-card-title>
+    <mat-card-content>
+        <div>
+            <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
+       </div>
+        <form [formGroup]="editForm" autocomplete="off">
+            <tr>
+                <td>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <mat-form-field appearance="outline" class="row" >
+                                <mat-label>First Name</mat-label>
+                                <input matInput formControlName="firstName" placeholder="firstName" value="firstName">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="row" >
+                                <mat-label>Last Name</mat-label>
+                                <input matInput formControlName="lastName" placeholder="lastName" value="lastName">
+                            </mat-form-field>
+
+                        </div>
+                    <div class="col">
+                        <div class="row-md-3">
+                           <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                                <mat-label>Middle Name</mat-label>
+                                <input matInput formControlName="middleName" placeholder="middleName" value="middleName">
+                            </mat-form-field>
+                        </div>
+                        <div class="row-md-3">
+                                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                                    <mat-label>Place</mat-label>
+                                    <input matInput formControlName="place" placeholder="place" value="place">
+                                </mat-form-field>
+                        </div>
+                    </div>
+                    </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+              <mat-label> Gender</mat-label>
+              <input matInput formControlName="gender" placeholder="name" value="name">
+            </mat-form-field>
+          
+      </div>
+        
+    <div class="col-md-6">
+      <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+          <mat-label>Nationality</mat-label>
+          <input matInput formControlName="nationality" placeholder="nationality" value="nationality">
+        </mat-form-field>
+      
+  </div>
+  <div class="col-md-6">
+    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+        <mat-label>Swaful</mat-label>
+        <input matInput formControlName="swaful_id" placeholder="faswlu" value="faswlu">
+      </mat-form-field>
+    
+</div>
+<div class="col-md-6">
+  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+      <mat-label>Parent number</mat-label>
+      <input matInput formControlName="parent_number" placeholder="number" value="number">
+    </mat-form-field>
+  
+</div>
+<div class="col-md-6">
+  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+      <mat-label>Parent Name</mat-label>
+      <input matInput formControlName="parent_name" placeholder="parent_name" value="parent_name">
+    </mat-form-field>
+  
+</div> 
+                    
+                </td>
+            </tr>
+
+        </form>
+        <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="Onsave()" >
+            <mat-icon>save</mat-icon>
+            save
+          </button>
+    </mat-card-content>
+</mat-card>

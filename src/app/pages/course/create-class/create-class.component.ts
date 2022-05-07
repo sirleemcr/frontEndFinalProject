@@ -19,7 +19,7 @@ export class CreateClassComponent implements OnInit {
   }
   configureCreateForm(){
     this.createForm=new FormGroup({
-      course_name: new FormControl(null,Validators.required)
+      swaful_name: new FormControl(null,Validators.required)
     });
   }
   
@@ -27,7 +27,7 @@ export class CreateClassComponent implements OnInit {
     const values=this.createForm.value;
     console.log('course =>', values);
     this.classervices.add(values).subscribe((response:any)=>{
-      console.log('create course =>',response);
+      console.log('create class =>',response);
       alert('saved')
       this.router.navigateByUrl('/coursetable');
     },
