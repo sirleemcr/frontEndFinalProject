@@ -6,6 +6,8 @@ import { ClassService } from 'src/app/services/class/class.service';
 import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
 import { SubjectService } from 'src/app/services/subject/subject.service';
 import { FitrahService } from 'src/app/services/fitrah/fitrah.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-add-subject',
@@ -65,9 +67,14 @@ export class AddSubjectComponent implements OnInit {
   }
   OnAdd(){
     const values= this.addsubjectform.value;
-    console.log("hhhh =>",values);
+    console.log("subject data =>",values);
     this.subjectService.add(values).subscribe((response)=>{
       console.log('succesful',response)
+      Swal.fire(
+        'data inserted!',
+        'You clicked the button!',
+        'success'
+      )
     })
 
   }

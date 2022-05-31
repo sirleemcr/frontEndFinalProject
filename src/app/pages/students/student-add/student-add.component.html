@@ -10,69 +10,96 @@
         <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
       </div>
       <form [formGroup]="studentForm" autocomplete="off">
-        <tr>
-          <td> 
-            <div class="col-md-6">
-              <div class="row">
-                <mat-form-field appearance="outline" class="row" >
-                  <mat-label>First Name</mat-label>
-                  <input matInput formControlName="firstName" placeholder="FirstName" value="FirstName">
-                </mat-form-field>
-    
-                <mat-form-field appearance="outline" class="row" >
-                  <mat-label>Last Name</mat-label>
-                  <input matInput formControlName="lastName" placeholder="lastName" value="lastName">
-                </mat-form-field>
-              </div>
-                    
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="row" >
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="FirstName" value="FirstName">
+              </mat-form-field>
             </div>
-          </td>
-          <td>
-            <div class="col-md-6">
-              <div class="row-md-3">
-                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="row" >
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" placeholder="lastName" value="lastName">
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="row" >
+                <mat-label>place</mat-label>
+                <input matInput formControlName="place" placeholder="place" value="">
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class=" w-100 example-full-width" >
                 <mat-label>Middle Name</mat-label>
                 <input matInput formControlName="middleName" placeholder="middleName" value="middleName">
                 </mat-form-field>
-              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="row">
+                <input type="date" name="date" formControlName="dob">
+              </mat-form-field>
+            </div>
+          </div>
+                    
+      
+          <td>
+            <div class="col-md-6">
               <div class="row-md-3">
-                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                    <mat-label>Place</mat-label>
-                    <input matInput formControlName="place" placeholder="place" value="place">
-                  </mat-form-field>
+               
               </div>
+             
+
+              
+             
               <div class="col">
                 
               </div>
             </div>
           </td>
-        </tr>
+        
         
        
           
             
         
         <div class="col-md-6">
-          <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-              <mat-label> Gender</mat-label>
-              <input matInput formControlName="gender" placeholder="name" value="name">
-            </mat-form-field>
           
-      </div>
+            <mat-form-field appearance="outline" >
+              <mat-label>gender</mat-label>
+              <select matNativeControl required formControlName="gender">
+                <option value="female">female</option>
+                <option value="male">male</option>
+              </select>
+            </mat-form-field>
+        </div>
         
     <div class="col-md-6">
       <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-          <mat-label>Nationality</mat-label>
-          <input matInput formControlName="nationality" placeholder="nationality" value="nationality">
-        </mat-form-field>
-      
+        <mat-label>nationality</mat-label>
+        <select matNativeControl required formControlName="nationality">
+          <option value="Tanzania">Tanzania</option>
+          <option value="Uganda">Uganda</option>
+          <option value="Saudia-arabia">Saudia-arabia</option>
+          <option value="Kenya">Kenya</option>
+          
+        </select>
+      </mat-form-field>
   </div>
   <div class="col-md-6">
-    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-        <mat-label>Faswlu</mat-label>
-        <input matInput formControlName="swaful_id" placeholder="faswlu" value="faswlu">
-      </mat-form-field>
-    
+    <mat-form-field appearance="fill">
+      <mat-label>SWAFUL</mat-label>
+      <mat-select formControlName="swaful_id">
+        <mat-option *ngFor="let sw of viewSwaful" [value]="sw.id">
+          {{sw.swaful_name}}
+        </mat-option>
+      </mat-select> 
+    </mat-form-field>
+
 </div>
 <div class="col-md-6">
   <mat-form-field appearance="outline" class=" w-100 example-full-width" >

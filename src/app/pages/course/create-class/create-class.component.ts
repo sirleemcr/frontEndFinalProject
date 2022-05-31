@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClassService } from 'src/app/services/class/class.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-create-class',
@@ -28,7 +30,11 @@ export class CreateClassComponent implements OnInit {
     console.log('course =>', values);
     this.classervices.add(values).subscribe((response:any)=>{
       console.log('create class =>',response);
-      alert('saved')
+      Swal.fire(
+        'darasa inserted!',
+        'You clicked the button!',
+        'success'
+      )
       this.router.navigateByUrl('/coursetable');
     },
     (error:HttpErrorResponse)=>{

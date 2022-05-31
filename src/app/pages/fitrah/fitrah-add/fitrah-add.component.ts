@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FitrahService } from 'src/app/services/fitrah/fitrah.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-fitrah-add',
@@ -34,6 +36,11 @@ export class FitrahAddComponent implements OnInit {
     this.fitrahService.add(values).subscribe((response:any)=>{
      console.log(" Fitrah =>",response);
      this.route.navigateByUrl("/fitrah");
+     Swal.fire(
+      'Fitrah inserted!',
+      'You clicked the button!',
+      'success'
+    )
     })
   }
 }

@@ -5,6 +5,8 @@ import { ClassService } from 'src/app/services/class/class.service';
 import { FitrahService } from 'src/app/services/fitrah/fitrah.service';
 import { SubjectService } from 'src/app/services/subject/subject.service';
 import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-edit-subject',
@@ -82,10 +84,26 @@ fethData(id:number){
     this.route.navigateByUrl('/subject')
   }
   OnChange(){
-    const values =this.editsubjectform.value;
-    this.subjectService.update(values).subscribe((response)=>{
-      this.route.navigateByUrl('/subject');
+
+    Swal.fire({
+      title: 'Are you sure want to save change?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        const values =this.editsubjectform.value;
+        this.subjectService.update(values).subscribe((response)=>{
+          this.route.navigateByUrl('/subject');
+        })
+        Swal.fire('Saved!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
     })
+   
     
   }
 }

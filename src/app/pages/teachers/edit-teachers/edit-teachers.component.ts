@@ -18,15 +18,15 @@ export class EditTeachersComponent implements OnInit {
     this.configEditFormTeacher();
     this.route.params.subscribe((ParamValues:any)=>{
       console.log(ParamValues)
-      const ustaadh_id= ParamValues.ustaadh_id
-      this.onfetchUstaadh(ustaadh_id);
+      const id= ParamValues.id
+      this.onfetchUstaadh(id);
     })
   }
 
-  onfetchUstaadh(ustaadh_id:number){
-    this.ustaadhService.getById(ustaadh_id).subscribe((response:any)=>{
+  onfetchUstaadh(id:number){
+    this.ustaadhService.getById(id).subscribe((response:any)=>{
       console.log("dd",response);
-      this.editFormTeacher.get('ustaadh_id')?.setValidators(response.ustaadh_id);
+      this.editFormTeacher.get('id')?.setValidators(response.id);
       this.editFormTeacher.get('firstName')?.setValue(response.firstName);
       this.editFormTeacher.get('middleName')?.setValue(response.middleName);
       this.editFormTeacher.get('lastName')?.setValue(response.lastName);
@@ -40,7 +40,7 @@ export class EditTeachersComponent implements OnInit {
 
   configEditFormTeacher(){
     this.editFormTeacher= new FormGroup({
-      ustaadh_id:new FormControl(null),
+      id:new FormControl(null),
       firstName:new FormControl(null,Validators.required),
       lastName: new FormControl(null,Validators.required),
       middleName:new FormControl(null,Validators.required),
@@ -59,8 +59,7 @@ export class EditTeachersComponent implements OnInit {
   }
   OnSave(){
     const values=this.editFormTeacher.value;
-    this.ustaadhService.update(values).subscribe((response:any)=>{
-      console.log("change =>",response)
+    this.ustaadhService.update(values).subscribe((response)=>{
       this.router.navigateByUrl('/teacher')
     })
     

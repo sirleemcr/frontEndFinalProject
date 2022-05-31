@@ -20,12 +20,12 @@
                 <tbody>
                     <tr *ngFor="let fit of fitrahList,let x=index">
                         <td>{{x+1}}</td>
-                        <td>{{fit.fitrah_id}}</td>
+                        <td>{{fit.id}}</td>
                         <td>{{fit.fitrah_name}}</td>
                         <td>{{fit.year}}</td>
                         <td>
                             <button mat-raised-button color="primary" (click)="OnUpdate(fit)">edit</button>
-                            <button mat-raised-button color="primary" (click)="OnDelete(fit.fitrah_id)">delete</button>
+                            <button mat-raised-button color="primary" (click)="OnDelete(fit.id)">delete</button>
                         </td>
                     </tr>
                 </tbody>

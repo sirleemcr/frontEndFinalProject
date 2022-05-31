@@ -33,7 +33,7 @@ export class SubjectFormComponent implements OnInit {
 
 
   OnUpdate(ust:any){
-   this.route.navigateByUrl('/edit-subject/'+ust.ustaadh_id)
+   this.route.navigateByUrl('/edit-subject/'+ust.id)
   }
   OnDelete(id:any){
     this.subjectService.delete(id).subscribe((response)=>{

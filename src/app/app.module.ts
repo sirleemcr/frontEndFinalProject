@@ -42,7 +42,8 @@ import { FitrahEditComponent } from './pages/fitrah/fitrah-edit/fitrah-edit.comp
 import {MatSelectModule } from '@angular/material/select';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LogOutComponent } from './pages/log-out/log-out.component';
-
+import {MatTabsModule} from '@angular/material/tabs';
+import { LoginpageComponent } from './pages/loginpage/loginpage.component'; 
 
 
 
@@ -72,6 +73,7 @@ import { LogOutComponent } from './pages/log-out/log-out.component';
     FitrahEditComponent,
     AdminComponent,
     LogOutComponent,
+    LoginpageComponent,
 
     
   ],
@@ -80,6 +82,7 @@ import { LogOutComponent } from './pages/log-out/log-out.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MatTabsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

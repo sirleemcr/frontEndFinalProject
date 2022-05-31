@@ -15,25 +15,28 @@ export class TeachersFormComponent implements OnInit {
   constructor(private route:Router,private ustadhService:UstadhService) { }
 
   ngOnInit(): void {
-    this.fetchStudent();
+    this.fetchUstaadh();
   }
 
-  fetchStudent(){
+  fetchUstaadh(){
     this.ustadhService.getAll().subscribe((response:any)=>
     {
-      console.log("class response ", response)
-      this.teacherForm=response;
+      console.log("teacher data => ", response)
+       this.teacherForm=response;
     })
   }
 
 
 
   OnEdit(Ustaadhes:any){
-    this.route.navigateByUrl('/edit-teacher/'+Ustaadhes.ustaadh_id)
+    this.route.navigateByUrl('/edit-teacher/'+Ustaadhes.id)
    
     
   }
-OnDelete(){
+OnDelete(id:number){
+  this.ustadhService.delete(id).subscribe((response)=>{
+    this.fetchUstaadh;
+  })
 
 }
 OnAdd(){

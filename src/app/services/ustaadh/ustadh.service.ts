@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UstadhService {
-  private apiUrl:string='http://localhost:8089/u';
+  private apiUrl:string='http://localhost:8090/u';
 
   constructor(private http:HttpClient) { }
     
@@ -26,8 +26,8 @@ export class UstadhService {
 
 
 
-  getById(ustaadh_id:number){
-    return this.http.get(this.apiUrl+"/ustaadh"+'/'+ustaadh_id); 
+  getById(id:number){
+    return this.http.get(this.apiUrl+"/ustaadh"+'/'+id); 
   }
 
   delete(id:number){

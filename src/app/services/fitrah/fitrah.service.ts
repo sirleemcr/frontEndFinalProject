@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FitrahService {
-  private ApiFit:string='http://localhost:8089/f';
+  private ApiFit:string='http://localhost:8090/f';
 
   constructor(private http:HttpClient) { }
 

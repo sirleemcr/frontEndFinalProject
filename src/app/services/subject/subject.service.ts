@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SubjectService {
-  private apiUrl:string='http://localhost:8089/su'
+  private apiUrl:string='http://localhost:8090/su'
 
   constructor(private http:HttpClient) { }
 
@@ -15,7 +15,7 @@ export class SubjectService {
   }
 
   add(body:any){
-    return this.http.post(this.apiUrl+"/su1",body);
+    return this.http.post(this.apiUrl+"/s1",body);
   }
   update(body:any){
     return this.http.put(this.apiUrl+"/edit",body)

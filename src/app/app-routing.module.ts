@@ -12,6 +12,7 @@ import { FitrahEditComponent } from './pages/fitrah/fitrah-edit/fitrah-edit.comp
 import { FitrahtbComponent } from './pages/fitrah/fitrahtb/fitrahtb.component';
 import { DashbordComponent } from './pages/home/dashbord/dashbord.component';
 import { LogOutComponent } from './pages/log-out/log-out.component';
+import { LoginpageComponent } from './pages/loginpage/loginpage.component';
 import { EditStudentComponent } from './pages/students/edit-student/edit-student.component';
 import { StudentAddComponent } from './pages/students/student-add/student-add.component';
 import { StudentsFormComponent } from './pages/students/students-form/students-form.component';
@@ -65,7 +66,7 @@ const routes: Routes = [
       component:EditClassComponent
     },
     {
-      path:'edit-teacher/:ustaadh_id',
+      path:'edit-teacher/:id',
       component:EditTeachersComponent
     },
     {
@@ -88,7 +89,7 @@ const routes: Routes = [
       component:EditSubjectComponent
     },
     {
-      path:'edit-student/:tilmydh_id',
+      path:'edit-student/:id',
       component:EditStudentComponent
     },
     {
@@ -100,7 +101,7 @@ const routes: Routes = [
       component:FitrahAddComponent
     },
     {
-      path:'fitrah-edit/:fitrah_id',
+      path:'fitrah-edit/:id',
       component:FitrahEditComponent
     },
     {
@@ -110,11 +111,12 @@ const routes: Routes = [
     {
       path:'log-out',
       component:LogOutComponent
-    }
-     
-    
-    
+    },
     ]
+  },
+  {
+    path:'login',
+    component:LoginpageComponent
   }
 ];
 

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentsService } from 'src/app/services/student/students.service';
+import Swal from 'sweetalert2';
+
 
 
 @Component({
@@ -19,15 +21,15 @@ editForm !:FormGroup
     this.onConfigure()
    this.route.params.subscribe((ParamValue:any)=>{
      console.log("values =>",ParamValue);
-     const tilmydh_id=ParamValue.tilmydh_id;
-     this.OnFetchData(tilmydh_id);
+     const id=ParamValue.id;
+     this.OnFetchData(id);
    })
   }
 
-  OnFetchData(tilmydh_id:number){
-    this.studentService.getById(tilmydh_id).subscribe((response:any)=>{
+  OnFetchData(id:number){
+    this.studentService.getById(id).subscribe((response:any)=>{
       console.log("data =>",response);
-      this.editForm.get("tilmydh_id")?.setValue(response.tilmydh_id);
+      this.editForm.get("id")?.setValue(response.id);
       this.editForm.get('firstName')?.setValue(response.firstName);
       this.editForm.get('lastName')?.setValue(response.lastName);
       this.editForm.get('middleName')?.setValue(response.middleName);
@@ -45,7 +47,7 @@ editForm !:FormGroup
 
   onConfigure(){
     this.editForm = new FormGroup({
-      tilmydh_id:new FormControl(null),
+      id:new FormControl(null),
       firstName:new FormControl(null,Validators.required),
       lastName:new FormControl (null,Validators.required),
       middleName:new FormControl(null,Validators.required),
@@ -59,12 +61,33 @@ editForm !:FormGroup
   }
 
 OnBack(){
+
+
+  
   this.router.navigateByUrl('/student')
 }
   Onsave(){
-  const values = this.editForm.value;
-  this.studentService.update(values).subscribe((response)=>{
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+    const values = this.editForm.value;
+    this.studentService.update(values).subscribe((response)=>{
     this.router.navigateByUrl("/student");
-  })
+       })
+        Swal.fire('Saved!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
+    })
+    
+  
   }
+
+  
 }
