@@ -20,7 +20,7 @@ export class SubjectFormComponent implements OnInit {
 
 
   fetchSubjectData(){
-    this.subjectService.getAll().subscribe((response:any)=>{
+    this.subjectService.getbyustaadh().subscribe((response:any)=>{
       console.log('subject =>',response)
       this.subjectTable=response;
     })

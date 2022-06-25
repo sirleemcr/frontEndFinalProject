@@ -32,7 +32,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { StudentTableComponent } from './pages/students/student-table/student-table.component';
 import { StudentAddComponent } from './pages/students/student-add/student-add.component';
 import { AddExamComponent } from './pages/exam/add-exam/add-exam.component';
 import { AddSubjectComponent } from './pages/subject/add-subject/add-subject.component';
@@ -43,7 +42,14 @@ import {MatSelectModule } from '@angular/material/select';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LogOutComponent } from './pages/log-out/log-out.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { LoginpageComponent } from './pages/loginpage/loginpage.component'; 
+import { LoginpageComponent } from './pages/loginpage/loginpage.component';
+import { TeacherAddComponent } from './pages/teachers/teacher-add/teacher-add.component'; 
+import {MatDialogModule} from '@angular/material/dialog';
+import { StudentResultComponent } from './pages/students/student-result/student-result.component';
+import { ChangePaswordComponent } from './pages/teachers/change-pasword/change-pasword.component';
+import { MatokeoComponent } from './pages/students/matokeo/matokeo.component';
+import { RolesComponent } from './pages/roles/roles.component';
+import { ExamsubjectComponent } from './pages/exam/examsubject/examsubject.component'
 
 
 
@@ -64,7 +70,6 @@ import { LoginpageComponent } from './pages/loginpage/loginpage.component';
     CreateTeacherComponent,
     EditTeachersComponent,
     EditSubjectComponent,
-    StudentTableComponent,
     StudentAddComponent,
     AddExamComponent,
     AddSubjectComponent,
@@ -74,6 +79,12 @@ import { LoginpageComponent } from './pages/loginpage/loginpage.component';
     AdminComponent,
     LogOutComponent,
     LoginpageComponent,
+    TeacherAddComponent,
+    StudentResultComponent,
+    ChangePaswordComponent,
+    MatokeoComponent,
+    RolesComponent,
+    ExamsubjectComponent,
 
     
   ],
@@ -96,7 +107,8 @@ import { LoginpageComponent } from './pages/loginpage/loginpage.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
     
   ],
   providers: [],

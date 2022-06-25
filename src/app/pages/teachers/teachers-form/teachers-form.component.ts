@@ -44,5 +44,9 @@ OnAdd(){
 
 }
 
+Addrole(){
+  this.route.navigateByUrl('/role')
+}
+
 
 }

@@ -13,19 +13,13 @@ import Swal from 'sweetalert2';
 })
 export class CourseTableComponent implements OnInit {
   classList: any []=[];
-  getid!:FormGroup
-date = Date()
+
+
 
   constructor(private classervices: ClassService , private router :Router) { }
 
   ngOnInit(): void {
-    this.getid=new FormGroup({
-      id:new FormControl('')
-    })
-  }
-  view(){
-    console.log(this.getid.value.id)
-   this.fetchAllclass() 
+    this.fetchAllclass()
   }
   fetchAllclass(){
    this.classervices.getAll().subscribe((response:any) =>{
@@ -38,11 +32,11 @@ date = Date()
 
   }
   OnEdit(classes:any){
-    this.router.navigateByUrl('/edit-class/'+classes.id)
+    this.router.navigateByUrl('/edit-class/'+classes.swaful_id)
 
   }
 
-  Ondelete(id:number){
+  Ondelete(swaful_id:number){
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -53,7 +47,7 @@ date = Date()
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.classervices.delete(id).subscribe(res =>{
+        this.classervices.delete(swaful_id).subscribe(res =>{
           this.fetchAllclass();
         })
         Swal.fire(

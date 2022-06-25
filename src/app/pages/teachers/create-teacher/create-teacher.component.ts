@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RoleService } from 'src/app/services/role/role.service';
 import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
 
 @Component({
@@ -11,13 +12,22 @@ import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
 })
 export class CreateTeacherComponent implements OnInit {
   addFormTeacher !:FormGroup
+  getRole:any[]=[]
 
-  constructor(private router:Router,private ustaadhservice:UstadhService) {
+  constructor(private router:Router,private ustaadhservice:UstadhService,private rolesService:RoleService) {
  
    }
 
   ngOnInit(): void {
     this.addFormTeacherConfig()
+    this.getroleconfig()
+  }
+
+  getroleconfig(){
+    this.rolesService.getrole().subscribe((res:any)=>{
+      console.log("role=>",res)
+      this.getRole=res
+    })
   }
 
   addFormTeacherConfig(){
@@ -29,7 +39,8 @@ export class CreateTeacherComponent implements OnInit {
       nationality:new FormControl(null, Validators.required),
       gender:new FormControl(null,Validators.required),
       phone_number:new FormControl(null,Validators.required),
-      email:new FormControl(null,Validators.email)
+      email:new FormControl(null,Validators.email),
+      rolesId:new FormControl('',Validators.required)
     })
 
   }

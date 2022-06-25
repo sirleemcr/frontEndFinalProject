@@ -1,5 +1,34 @@
 <mat-tab-group>
-    <mat-tab label="View Student"> Content 1 </mat-tab>
+    <mat-tab label="View Student">
+        <mat-card-title>
+            RESULT OF EXAM
+        </mat-card-title>
+        <div class="table ">
+            <table class="table table-border">
+                <thead>
+                    <tr>
+                        <th>tilmiydh number</th>
+                        <th>fitrah</th>
+                        <th>subject</th>
+                        <th>marks</th>
+                        <th>update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ex of examination ,let x=index">
+                    <td>{{ex.tilmydh_id}}</td>
+                    <td>{{ex.fitrah_name}}</td>
+                    <td>{{ex.subject_name}}</td>
+                    <td>{{ex.marks}}</td>
+                    <td>
+                        <button mat-raised-button color="primary">Update marks</button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </mat-tab>
     <mat-tab label="Assesment"> <mat-card>
         <mat-card-title>
             Exam
@@ -10,7 +39,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>SWAFUL</mat-label>
                     <mat-select formControlName="swaful_id">
-                      <mat-option *ngFor="let sw of viewClass" [value]="sw.id">
+                      <mat-option *ngFor="let sw of viewClass" [value]="sw.swaful_id">
                         {{sw.swaful_name}}
                       </mat-option>
                     </mat-select> 
@@ -37,33 +66,29 @@
                         <th>Sn</th>
                         <th>student</th>
                         <th>subject</th>
+                        <th>swaful</th>
                         <th>marks</th>
-                        <th>grade</th>
-                        <th>action</th>
+                        
+                    
                         <!-- <th>action</th> -->
                     </tr>
                 </thead>
                 <tbody >
-                    <tr *ngFor="let stud of viewStudent,let x=index">
+                    <tr *ngFor="let stud of viewStudent,let su of viewSubject,let x=index">
                         <td>{{x+1}}</td>
-                        <td>{{stud.first_name}}</td>
-                        <td>{{stud.subject_name}}</td>
+                        <td>{{stud.tilmydh_id}}</td>
+                        <td>{{stud.id}}</td>
+                        <td>{{stud.swaful_id}}</td>
 
                         <td>
-                            <form >
+                            <form [formGroup]="g">
                                
-                                <input type="number" [formControl]="skills.controls[x]"  >
-                                <input type="hidden" value="{{stud.tilmydh_id}}">
-                                <input type="hidden" value="{{stud.swaful_id}}">
-                                <input type="hidden" value="{{stud.subject_id}}">
+                                <input type="number" [formControl]="marks.controls[x]"  >
+                                <input type="hidden" [formControl]="tilmydh_id.controls[x]" [(ngModel)]="stud.tilmydh_id">
+                                <input type="hidden" [formControl]="swaful_id.controls[x]" [(ngModel)]="stud.swaful_id">
+                                <input type="hidden" [formControl]="subject_id.controls[x]" [(ngModel)]="stud.id">
                             
                             </form>
-                        </td>
-                        <td></td>
-                
-                         <td>
-                            <button mat-raised-button color="primary" (click)="OnUpdate()">update</button>
-                            <button mat-raised-button color="primary" (click)="OnDelete()">delete</button>
                         </td> 
                        
                     </tr>

@@ -23,13 +23,24 @@ export class ExamService {
   }
 
   getById(id:number){
-    this.http.get(this.ExamApi+"/imtihaan"+"/"+id)
+   return this.http.get(this.ExamApi+"/imtihaan"+"/"+id)
   }
   delete(id:number){
-    this.http.delete(this.ExamApi+"delete"+"/"+id)
+   return this.http.delete(this.ExamApi+"delete"+"/"+id)
   }
 
   getBySubject(swaful_id:number){
-    this.http.get(this.ExamApi+"/tilmy"+"/"+swaful_id)
+   return this.http.get(this.ExamApi+"/tilmy"+"/"+swaful_id)
+  }
+
+  getMatokeo(tilmydh_id:number){
+   return this.http.get(this.ExamApi+"/imt/"+tilmydh_id)
+
+  }
+  getResult(tilmydh_id:number,fitrah_id:number){
+    return this.http.get(this.ExamApi+"/im/tilmydh_id/"+tilmydh_id+"/fitrah_id/"+fitrah_id)
+  }
+  getAllResult(){
+   return this.http.get(this.ExamApi+"/imt/view")
   }
 }

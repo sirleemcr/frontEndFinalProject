@@ -4,38 +4,28 @@
             <div class="card card-body">
                 <h2 class="text-center"> Login-Page</h2>
                     <hr>
+                    <form [formGroup]="LoginForm">
                     <p><mat-form-field appearance="outline" class=" w-100 example-full-width" >
                         <mat-label>username</mat-label>
-                        <input matInput placeholder="username" >
+                        <input matInput placeholder="username" formControlName="email" >
                       </mat-form-field>
                     </p>
                     <p>
                         <mat-form-field appearance="outline" class=" w-100 example-full-width" >
                             <mat-label>password</mat-label>
-                            <input matInput  placeholder="password" >
+                            <input type="password" matInput  placeholder="password"  formControlName="password">
                           </mat-form-field>
                     </p>
+                  </form>
                     <button mat-raised-button color="primary" (click)="Onlogin()"><mat-icon>login</mat-icon>login</button>
+
+                    <hr>
+                    <div> 
+                      <p> d <a routerLink="/add-ust">Register Here</a></p>
+                    </div>
               
             </div>
         </div>
     </div>
     
 </div>
-<!-- wal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-      )
-    }
-  }) -->

@@ -19,7 +19,7 @@ export class EditClassComponent implements OnInit {
 
   configureCreateForm(){
     this.editForm=new FormGroup({
-      id:new FormControl(null),
+      swaful_id:new FormControl(null),
       swaful_name: new FormControl(null,Validators.required)
     });
   }
@@ -30,8 +30,8 @@ export class EditClassComponent implements OnInit {
     this.configureCreateForm();
     this.route.params.subscribe((parasValues:any)=>{
       console.log('nahuu ',parasValues);
-       const id=parasValues.id;
-       this.fetchClassById(id);
+       const swaful_id=parasValues.swaful_id;
+       this.fetchClassById(swaful_id);
     });
     
   }
@@ -39,7 +39,7 @@ export class EditClassComponent implements OnInit {
   fetchClassById(swaful_id :number){
     this.classervices.getById(swaful_id).subscribe((response:any)=>{
       console.log('bingo', response);
-      this.editForm.get('id')?.setValue(response.id);
+      this.editForm.get('swaful_id')?.setValue(response.swaful_id);
       this.editForm.get('swaful_name')?.setValue(response.swaful_name);
     },(error:HttpErrorResponse)=>{
       console.log('mmeapata erreor',error)

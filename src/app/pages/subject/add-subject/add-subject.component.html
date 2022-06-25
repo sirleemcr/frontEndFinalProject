@@ -16,7 +16,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>ustadh</mat-label>
                 <mat-select formControlName="ustaadh_id">
-                  <mat-option *ngFor="let ustadh of UstadhView" [value]="ustadh.id">
+                  <mat-option *ngFor="let ustadh of UstadhView" [value]="ustadh.ustaadh_id">
                     {{ustadh.firstName}}
                   </mat-option>
                 </mat-select>
@@ -38,7 +38,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>SWAFUL</mat-label>
                 <mat-select formControlName="swaful_id">
-                  <mat-option *ngFor="let sw of swafulView" [value]="sw.id">
+                  <mat-option *ngFor="let sw of swafulView" [value]="sw.swaful_id">
                     {{sw.swaful_name}}
                   </mat-option>
                 </mat-select> 

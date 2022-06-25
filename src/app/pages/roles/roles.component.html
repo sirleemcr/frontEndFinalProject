@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="roleform">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                    <mat-label>roles</mat-label>
+                    <input matInput formControlName="rolesName" placeholder="role" value="role">
+                </mat-form-field>
+            </div>
+        </form>
+        <button mat-raised-button color="primary"   (click)="OnRole()">addrole</button>
+    </mat-card-content>
+    
+</mat-card>
+ 

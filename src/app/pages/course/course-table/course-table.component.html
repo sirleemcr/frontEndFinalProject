@@ -1,17 +1,11 @@
 <mat-card>
-    <div class="date">
-        {{date | date: 'dd - MMM-YYY     HH.mm'  }}
-    </div>
+    
     <mat-card-header>madarasa</mat-card-header>
     <mat-card-subtitle>list ya madarasa</mat-card-subtitle>
     <mat-card-content>
         <div>
             <button mat-raised-button color="accent" (click)="OnCreate()">Add Class</button>
-      <form [formGroup]="getid" (ngSubmit)="view()">
-          <input formControlName="id">
-          <button  mat-raised-button type="submit" color="accent">Views</button>
-      
-      </form>
+
         </div>
         <table class="table table-border">
             <thead>
@@ -33,7 +27,7 @@
                             edit
                         </mat-icon>
                     edit</button>
-                    <button mat-raised-button color='primary' (click)="Ondelete(classes.id)" >
+                    <button mat-raised-button color='primary' (click)="Ondelete(classes.swaful_id)" >
                         <mat-icon>
                             delete
                         </mat-icon>

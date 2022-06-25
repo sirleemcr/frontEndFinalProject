@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -15,7 +16,14 @@ export class MainLayoutComponent {
       map(result => result.matches),
       shareReplay()
     );
+    
+    rolesList:any
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver) {
+    const ustaadh =JSON.parse(sessionStorage.getItem('ustaadh')!)
+    this.rolesList=ustaadh.rolesList
+    console.log("role is =>",ustaadh.rolesList)
+
+  }
 
 }

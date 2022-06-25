@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { FitrahService } from 'src/app/services/fitrah/fitrah.service';
 import Swal from 'sweetalert2';
+import { FitrahAddComponent } from '../fitrah-add/fitrah-add.component';
 
 @Component({
   selector: 'app-fitrahtb',
@@ -11,7 +13,7 @@ import Swal from 'sweetalert2';
 export class FitrahtbComponent implements OnInit {
   fitrahList:any[]=[]
 
-  constructor(private route:Router,private fitrahServicce:FitrahService) { }
+  constructor(private route:Router,private fitrahServicce:FitrahService,private matDialog:MatDialog) { }
 
   ngOnInit(): void {
     this.fetchFitrahData();
@@ -25,7 +27,11 @@ export class FitrahtbComponent implements OnInit {
   }
 
   OnAdd(){
-    this.route.navigateByUrl('/fitrah-add')
+    const cr={
+      width:'50%'
+    }
+   // this.route.navigateByUrl('/fitrah-add')
+   this.matDialog.open(FitrahAddComponent,cr);
   }
    
   OnUpdate(fit:any){

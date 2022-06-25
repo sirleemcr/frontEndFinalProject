@@ -33,4 +33,8 @@ export class UstadhService {
   delete(id:number){
     return this.http.delete(this.apiUrl+"/delete"+'/'+id);
   }
+
+  log(email:String,password:String){
+    return this.http.get(this.apiUrl+"/email/"+email+"/password/"+password);
+  }
 }

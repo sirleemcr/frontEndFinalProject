@@ -23,11 +23,13 @@ export class ExamformComponent implements OnInit {
   subject_id = new FormArray([]);
   tilmydh_id= new FormArray([]);
   skillss = new FormArray([]);
+  examination:[]=[];
   constructor(private route:Router,private examService:ExamService,
     private studentService:StudentsService ,
     private subjectService:SubjectService,private classService:ClassService ) { }
 
   ngOnInit(): void {
+    this.configExam();
     this.fetchstudent()
     this.fetchClass()
     this.fetchSubject()
@@ -108,30 +110,22 @@ clickme(){
   for(i=0;i<this.marks.length;i++){
   this.group=  new FormGroup({
       marks: new FormControl(this.marks.value[i]),
-      
+      tilmydh_id:new FormControl(this.tilmydh_id.value[i]),
+      subject_id:new FormControl(this.subject_id.value[i]),
+      swaful_id:new FormControl(this.swaful_id.value[i])
       
     })
+    console.log(this.tilmydh_id.value)
  this.skillss.push(this.group)}
   console.log(this.skillss.value)
+
+  this.examService.add(this.skillss.value).subscribe((res)=>{
+    console.log("succesfully");
+  })
     
   
 }
-OnSave(){
 
-  // const values=this.insertmarks.value;
-  //   console.log('marks =>', values);
-  //   this.examService.add(values).subscribe((response)=>{
-  //     console.log("exam =>",response)
-  //   })
-    
-}
- 
-  OnUpdate(){
-
-  }
-  OnDelete(){
-    
-  }
   view(){
     console.log(this.upperForm.value.swaful_id)
     this.studentService.getbyclass(this.upperForm.value.swaful_id,this.upperForm.value.subject_id).subscribe((response:any)=>{
@@ -142,6 +136,12 @@ OnSave(){
       }
       this.viewStudent=response 
      })
+  }
+
+  configExam(){
+    this.examService.getAllResult().subscribe((cr :any)=>{
+      this.examination=cr;
+    })
   }
 
 }

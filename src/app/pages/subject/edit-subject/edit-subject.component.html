@@ -36,7 +36,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Swaful</mat-label>
                 <mat-select formControlName="swaful_id">
-                  <mat-option *ngFor="let swaful of swafulView" [value]="swaful.id">
+                  <mat-option *ngFor="let swaful of swafulView" [value]="swaful.swaful_id">
                     {{swaful.swaful_name}}
                   </mat-option>
                 </mat-select>

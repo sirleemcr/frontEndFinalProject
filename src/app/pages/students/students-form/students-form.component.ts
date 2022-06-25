@@ -13,6 +13,7 @@ export class StudentsFormComponent implements OnInit {
   studentList:any []=[];
   classList:any[]=[]
   selectForm !:FormGroup
+  selectbyid !:FormGroup
   
 
   constructor(private route :Router,
@@ -23,6 +24,7 @@ export class StudentsFormComponent implements OnInit {
     this.fetchAllStudent()
     this.fetchAllClass()
     this.configSelectForm()
+    this.configureselectByid()
   }
  fetchAllClass(){
    this.classSerive.getAll().subscribe((response:any)=>{
@@ -31,7 +33,12 @@ export class StudentsFormComponent implements OnInit {
  }
  configSelectForm(){
    this.selectForm= new FormGroup({
-    swaful_id:new FormControl(null,Validators.required)
+    swaful_id:new FormControl(''),
+   })
+ }
+ configureselectByid(){
+   this.selectbyid= new FormGroup({
+     tilmydh_id:new FormControl(null)
    })
  }
   
@@ -45,12 +52,12 @@ fetchAllStudent(){
 }
 
   OnCreate(){
-    this.route.navigateByUrl('/student-add');
+    this.route.navigateByUrl('/main/student-add');
   }
 
   
   OnEdit(stud:any){
-    this.route.navigateByUrl('/edit-student/'+stud.id)
+    this.route.navigateByUrl('/main/edit-student/'+stud.tilmydh_id)
 
   }
 
@@ -69,6 +76,19 @@ fetchAllStudent(){
       this.studentList=res;
     })
 
+  }
+
+  OnSelectId(){
+    console.log("id =>",this.selectbyid.value.tilmydh_id)
+    this.studentservice.getById(this.selectbyid.value.tilmydh_id).subscribe((response:any)=>{
+      console.log("student by id => ", response)
+      this.studentList=response;
+    })
+  }
+
+
+  OnViewResult(stud:any){
+    this.route.navigateByUrl('/main/matokeo/'+stud.tilmydh_id)
   }
 
 }

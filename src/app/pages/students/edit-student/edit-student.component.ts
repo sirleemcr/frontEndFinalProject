@@ -1,7 +1,8 @@
-import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ClassService } from 'src/app/services/class/class.service';
 import { StudentsService } from 'src/app/services/student/students.service';
 import Swal from 'sweetalert2';
 
@@ -13,11 +14,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./edit-student.component.css']
 })
 export class EditStudentComponent implements OnInit {
+SwafulView:any[]=[]  
 editForm !:FormGroup
 
-  constructor(private route:ActivatedRoute, private router:Router,private studentService:StudentsService) { }
+  constructor(private route:ActivatedRoute, private router:Router,private studentService:StudentsService,private classServive:ClassService) { }
 
   ngOnInit(): void {
+    this.Onview()
     this.onConfigure()
    this.route.params.subscribe((ParamValue:any)=>{
      console.log("values =>",ParamValue);
@@ -29,7 +32,7 @@ editForm !:FormGroup
   OnFetchData(id:number){
     this.studentService.getById(id).subscribe((response:any)=>{
       console.log("data =>",response);
-      this.editForm.get("id")?.setValue(response.id);
+      this.editForm.get("tilmydh_id")?.setValue(response.tilmydh_id);
       this.editForm.get('firstName')?.setValue(response.firstName);
       this.editForm.get('lastName')?.setValue(response.lastName);
       this.editForm.get('middleName')?.setValue(response.middleName);
@@ -44,10 +47,17 @@ editForm !:FormGroup
     
   }
 
+  Onview(){
+    this.classServive.getAll().subscribe((res:any)=>{
+      console.log("swaful=>",res)
+      this.SwafulView=res
+    })
+  }
+
 
   onConfigure(){
     this.editForm = new FormGroup({
-      id:new FormControl(null),
+      tilmydh_id:new FormControl(null),
       firstName:new FormControl(null,Validators.required),
       lastName:new FormControl (null,Validators.required),
       middleName:new FormControl(null,Validators.required),

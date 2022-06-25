@@ -70,6 +70,16 @@
                       </mat-form-field>
                     
                 </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>role</mat-label>
+                      <mat-select formControlName="rolesId">
+                        <mat-option *ngFor="let sw of getRole" [value]="sw.rolesId">
+                          {{sw.rolesName}}
+                        </mat-option>
+                      </mat-select> 
+                    </mat-form-field>
+                  </div>
             </form>
             <div class="back">
                 <button mat-raised-button color="primary" [disabled]="addFormTeacher.invalid" (click)="OnSave()">save</button>

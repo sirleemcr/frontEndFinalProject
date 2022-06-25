@@ -1,0 +1,37 @@
+<mat-card>
+    <div>
+        <form [formGroup]="FitrahForm">
+            <mat-form-field appearance="fill">
+                <mat-label>fitrah</mat-label>
+                <mat-select formControlName="fitrah_name">
+                  <mat-option *ngFor="let sw of viewFitrah" [value]="sw.id">
+                    {{sw.year}}
+                  </mat-option>
+                </mat-select> 
+              </mat-form-field>
+              <button  mat-raised-button type="submit" (click)="view()" color="accent">Views</button>
+        </form>
+    </div>
+    </mat-card>
+    <hr>
+
+    <mat-card>
+    <div *ngIf="data">  
+        <div class="print"><button mat-raised-button color="primary" (click)="[ send(ma),OnPrint()]"><mat-icon>print</mat-icon></button></div>
+        <table class="table table-border" >
+            <thead>
+                <tr>
+                    <th>subject</th>
+                    <th>marks</th>
+                </tr >
+            </thead>
+            <tbody>
+                <tr *ngFor="let ma of Result">
+                    <td>{{ma.subject_name}}</td>
+                    <td>{{ma.marks}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</mat-card>

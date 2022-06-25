@@ -14,6 +14,10 @@ export class SubjectService {
     return this.http.get(this.apiUrl+"/subject");
   }
 
+  getbyustaadh(){
+    return this.http.get(this.apiUrl+"/subject/ustaadh");
+  }
+
   add(body:any){
     return this.http.post(this.apiUrl+"/s1",body);
   }

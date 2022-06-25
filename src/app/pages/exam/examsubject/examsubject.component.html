@@ -1,0 +1,89 @@
+<mat-tab-group>
+  <mat-tab label="View Student">
+      <mat-card-title>
+          RESULT OF EXAM
+      </mat-card-title>
+      <div class="table ">
+          <table class="table table-border">
+              <thead>
+                  <tr>
+                      <th>tilmiydh number</th>
+                      <th>swaful</th>
+                      <th>subject</th>
+                      <th>marks</th>
+                      <th>update</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let ex of examination ,let x=index">
+                  <td>{{ex.tilmydh_id}}</td>
+                  <td>{{ex.swaful_id}}</td>
+                  <td>{{ex.subject_id}}</td>
+                  <td>{{ex.marks}}</td>
+                  <td>
+                      <button mat-raised-button color="primary">Update marks</button>
+                  </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      </mat-tab>
+    <mat-tab label="Assesment"> <mat-card>
+        <mat-card-title>
+            Exam
+        </mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="upperForm">
+              <mat-form-field appearance="fill">
+                  <mat-label>SWAFUL</mat-label>
+                  <mat-select formControlName="swaful_id">
+                    <mat-option *ngFor="let sw of viewClass" [value]="sw.swaful_id">
+                      {{sw.swaful_name}}
+                    </mat-option>
+                  </mat-select> 
+                </mat-form-field>
+                <button  mat-raised-button type="submit" (click)="view()" color="accent">Views</button>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>subject</mat-label>
+                  <mat-select formControlName="subject_id">
+                    <mat-option *ngFor="let su of viewSubject" [value]="su.id">
+                      {{su.subject_name}}
+                    </mat-option>
+                  </mat-select> 
+                </mat-form-field>
+                <table class="table table-border" datasource="viewStudent">
+                  <thead>
+                      <tr >
+                          <th>Sn</th>
+                          <th>student</th>
+                          <!-- <th>subject</th>
+                          <th>swaful</th> -->
+                          <th>marks</th>
+                          
+                  </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let stud of viewStudent,let su of viewSubject,let x=index">
+                        <td>{{x+1}}</td>
+                        <td>{{stud.tilmydh_id}}</td>
+                        <!-- <td>{{stud.id}}</td>
+                        <td>{{stud.swaful_id}}</td> -->
+
+                         <td>
+                            <form [formGroup]="g">
+                               
+                                <input type="number" [formControl]="marks.controls[x]"  >
+                                <input type="hidden" [formControl]="tilmydh_id.controls[x]" [(ngModel)]="stud.tilmydh_id">
+                                <input type="hidden" [formControl]="swaful_id.controls[x]" [(ngModel)]="stud.swaful_id">
+                                <input type="hidden" [formControl]="subject_id.controls[x]" [(ngModel)]="stud.id">
+                           </form>
+                                           
+            </table> 
+            <button mat-raised-button color="primary" (click)="clickme()">Save</button>
+        </form>
+    </mat-card-content>    
+</mat-card> 
+    </mat-tab>
+    
+</mat-tab-group>

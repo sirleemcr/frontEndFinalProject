@@ -13,13 +13,25 @@
                 <mat-form-field appearance="fill">
                     <mat-label>SWAFUL</mat-label>
                     <mat-select formControlName="swaful_id">
-                      <mat-option *ngFor="let sw of classList" [value]="sw.id">
+                      <mat-option *ngFor="let sw of classList" [value]="sw.swaful_id">
                         {{sw.swaful_name}}
                       </mat-option>
                     </mat-select> 
                   </mat-form-field>
                   <button  mat-raised-button type="submit" (click)="OnSelect()" color="accent">Views</button>
                   
+            </form>
+
+            <form [formGroup]="selectbyid">
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="row" >
+                      <mat-label>tilmydh_id</mat-label>
+                      <input matInput formControlName="tilmydh_id" placeholder="tilmydh_id" value="tilmydh_id">
+                    </mat-form-field>
+                  </div>
+                <div>
+                      <button  mat-raised-button type="submit" (click)="OnSelectId()" color="primary">Views</button>
+                </div>
             </form>
         </div>
         <table class="table table-border">
@@ -37,13 +49,14 @@
                 <th>Parent Number</th>
                 <th>Date of Birth</th>
                 <th>ACTION</th>
+                <th>Result</th>
 
             </thead>
             <tbody>
                 <tr *ngFor="let stud of studentList let y = index">
                     <td>{{y+1}}</td>
-                    <td>{{stud.id}}</td>
-                    <td>{{stud.first_name}}</td>
+                    <td>{{stud.tilmydh_id}}</td>
+                    <td>{{stud.firstName}}</td>
                     <td>{{stud.lastName}}</td>
                     <td>{{stud.middleName}}</td>
                     <td>{{stud.gender}}</td>
@@ -55,8 +68,9 @@
                     <td>{{stud.dob}}</td>
                     <td>
                         <button mat-raised-button color="primary" (click)="OnEdit(stud)">Edit</button>
-                        <button mat-raised-button color="primary" (click)="OnDelete(stud.id)">delete</button>
+                        <button mat-raised-button color="primary" (click)="OnDelete(stud.tilmydh_id)">delete</button>
                     </td>
+                    <td> <button mat-raised-button color="warn"  (click)="OnViewResult(stud)" >result</button></td>
                 </tr>
             </tbody>
         </table>

@@ -22,7 +22,7 @@ export class ClassService {
     return this.http.get(this.apiUrl+"/swaful"+'/'+swaful_id);   
   }
 
-  delete(id:number){
-    return this.http.delete(this.apiUrl+"/delete"+'/'+id);
+  delete(swaful_id:number){
+    return this.http.delete(this.apiUrl+"/delete"+'/'+swaful_id);
   }
 }
