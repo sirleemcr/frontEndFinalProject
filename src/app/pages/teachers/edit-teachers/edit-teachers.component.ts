@@ -54,13 +54,13 @@ export class EditTeachersComponent implements OnInit {
 
 
   OnBack(){
-    this.router.navigateByUrl('/teacher')
+    this.router.navigateByUrl('/main/teacher')
 
   }
   OnSave(){
     const values=this.editFormTeacher.value;
     this.ustaadhService.update(values).subscribe((response)=>{
-      this.router.navigateByUrl('/teacher')
+      this.router.navigateByUrl('/main/teacher')
     })
     
   }

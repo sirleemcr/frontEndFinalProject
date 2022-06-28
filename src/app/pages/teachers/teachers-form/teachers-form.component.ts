@@ -40,12 +40,12 @@ OnDelete(id:number){
 
 }
 OnAdd(){
-  this.route.navigateByUrl('/add-teacher')
+  this.route.navigateByUrl('/main/add-teacher')
 
 }
 
 Addrole(){
-  this.route.navigateByUrl('/role')
+  this.route.navigateByUrl('/main/role')
 }
 
 

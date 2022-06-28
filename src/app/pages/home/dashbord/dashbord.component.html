@@ -1,3 +1,11 @@
-<div class="date">
-    {{date | date: 'dd - MMM-YYY     HH.mm'  }}
+<div>
+    <div class="date">
+        {{date | date: 'dd - MMM-YYY     HH.mm'  }}
+    </div>
+    <div class="setting"> 
+        <button mat-raised-button (click)="OnSetting()">setting</button>
+    </div>
 </div>
+
+
+

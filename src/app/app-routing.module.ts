@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthguardGuard } from './authguard.guard';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { RoleguardGuard } from './loginrole/roleguard.guard';
 import { AdminComponent } from './pages/admin/admin.component';
 import { CourseTableComponent } from './pages/course/course-table/course-table.component';
 import { CreateClassComponent } from './pages/course/create-class/create-class.component';
@@ -47,13 +48,18 @@ const routes: Routes = [
     children:
     [
       {
-        path:'',
+        path:'home',
         component:DashbordComponent
       },
+      
 
       {
         path:'student',
-        component:StudentsFormComponent
+        component:StudentsFormComponent,
+        // canActivate:[RoleguardGuard],
+        // data:{
+        //   expectedRoles:['admin']
+        // }
       },
       {
         path:'teacher',
@@ -126,10 +132,6 @@ const routes: Routes = [
       component:AdminComponent
     },
     {
-      path:'log-out',
-      component:LogOutComponent
-    },
-    {
       path:'result',
       component:StudentResultComponent
     },
@@ -148,6 +150,10 @@ const routes: Routes = [
     },{
       path:'marks',
       component:ExamsubjectComponent
+    },
+    {
+      path:'role/:ustaadh_id',
+      component:RolesComponent
     }
     ]
 

@@ -5,7 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>menu</mat-toolbar>
     <mat-nav-list >
-      <a mat-list-item routerLink="/">  <mat-icon>home </mat-icon> dashbord</a>
+      <a mat-list-item routerLink="home">  <mat-icon>home </mat-icon> dashbord</a>
       <!-- <a mat-list-item routerLink="/admin">Admin</a> -->
       <mat-nav-list *ngFor="let role of rolesList">
       <a *ngIf="role.rolesName =='admin'" mat-list-item routerLink="student" [routerLinkActive]="['active']">tilmydh</a> 
@@ -15,7 +15,6 @@
       <a mat-list-item routerLink="coursetable" >swaful</a>
       <a mat-list-item routerLink="exam" class="fa fa-user">imtihaan</a>
       <a mat-list-item routerLink="fitrah">Fitrah</a>
-      <a mat-list-item routerLink="log-out">Log Out</a>
       <a mat-list-item routerLink="password">login information</a>
       <mat-nav-list *ngFor="let role of rolesList">
         <a *ngIf="role.rolesName=='ustaadh'" mat-list-item routerLink="marks" [routerLinkActive]="['active']">studentMark</a>
@@ -35,23 +34,7 @@
       </button>
       <span>Al-madrasatul Ibtidaiyyah islaamiyyah</span>
       <div class="logout">
-        <!-- <span class="material-icons"  style="margin-left: 1000px;">logout</span> -->
-        <div class="row">
-          <div class="col-md-12 mx-auto mb-5 d-flex justify-content-center align-items-center flex-wrap">
-            <div class="btn-group" mdbDropdown>
-              <a mdbDropdownToggle mdbWavesEffect type="button" class="dropdown-toggle waves-light" mdbWavesEffect style="height: auto; width: 30px">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.webp" alt="" class="img-fluid rounded-circle z-depth-0">
-              </a>
-              <div class="dropdown-menu dropdown-primary">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="divider dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-          </div>
-        </div>
+       <button mat-raised-button color="" (click)="OnLogOut()"><mat-icon>logout</mat-icon></button>
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->

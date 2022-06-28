@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashbord',
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class DashbordComponent implements OnInit {
   date= new Date();
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     console.log('hello')
+  }
+
+  OnSetting(){
+    this.router.navigateByUrl("main/role")
   }
 
 }

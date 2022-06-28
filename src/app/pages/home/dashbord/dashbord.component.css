@@ -1,4 +1,8 @@
 .date{
-    color: rgb(165, 42, 42);
-
+    margin-left: 1400px;
+}
+.setting button{
+    margin-left: 1400px;
+    color: white;
+    background-color: black;
 }

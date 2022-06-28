@@ -28,6 +28,7 @@ export class StudentsFormComponent implements OnInit {
   }
  fetchAllClass(){
    this.classSerive.getAll().subscribe((response:any)=>{
+    console.log("jjj",response)
      this.classList=response;
    })
  }
@@ -72,8 +73,9 @@ fetchAllStudent(){
   OnSelect(){
     console.log(this.selectForm.value.swaful_id)
     this.studentservice.getbyswaful(this.selectForm.value.swaful_id).subscribe((res:any)=>{
+      this.studentList=res
       console.log("student by class =>",res)
-      this.studentList=res;
+      
     })
 
   }

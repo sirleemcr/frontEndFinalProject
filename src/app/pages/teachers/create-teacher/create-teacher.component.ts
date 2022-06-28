@@ -46,7 +46,7 @@ export class CreateTeacherComponent implements OnInit {
   }
 
   OnBack(){
-    this.router.navigateByUrl('/teacher')
+    this.router.navigateByUrl('/main/teacher')
   }
   OnSave(){
     const values=this.addFormTeacher.value;
@@ -54,7 +54,7 @@ export class CreateTeacherComponent implements OnInit {
     this.ustaadhservice.add(values).subscribe((response:any)=>{
       console.log('create ustaadh =>',response);
       alert('saved')
-      this.router.navigateByUrl('/teacher');
+      this.router.navigateByUrl('/main/teacher');
     },
     (error:HttpErrorResponse)=>{
      console.log(error);

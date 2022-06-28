@@ -1,15 +1,95 @@
-<mat-card>
-    <mat-card-content>
-        <form [formGroup]="roleform">
-            <div class="col-md-6">
-                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                    <mat-label>roles</mat-label>
-                    <input matInput formControlName="rolesName" placeholder="role" value="role">
-                </mat-form-field>
+<div class="btn" >
+    <button class="role" mat-raised-button (click)="Onaddrole()">Addrole</button>
+    <button class="auth" mat-raised-button (click)="Onchangeauth()">changeAuth</button>
+</div>
+
+<div class="row">
+  <div  class="col-md-6">
+    <mat-card *ngIf="data">
+        <mat-card-content>
+            <div>
+                <button  button mat-raised-button (click)="OnCheo()">ingiza cheo</button>
+                <table class="table table-border">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>cheo</th>
+                            <th>futa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let che of viewcheo,let y=index">
+                            <td>{{y+1}}</td>
+                            <td>{{che.rolesName}}</td>
+                            <td><button class="futa" mat-raised-button (click)="Onfuta()">futa</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </form>
-        <button mat-raised-button color="primary"   (click)="OnRole()">addrole</button>
-    </mat-card-content>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="addrole">
+        <mat-card-content >
+                <form  [formGroup]="roleform">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                            <mat-label>roles</mat-label>
+                            <input matInput formControlName="rolesName" placeholder="role" value="role">
+                        </mat-form-field>
+                    </div>
+                </form>
+               <button mat-raised-button color="primary" [disabled]="roleform.invalid" (click)="OnRole()">addrole</button>
+            </mat-card-content>
+    </mat-card>
+ </div>
+    <div class="col-md-6">
+        <mat-card *ngIf="dat">
+            <mat-card-content>
+                <table class="table table-border">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>jina</td>
+                            <td>cheo</td>
+                            <td>change</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ust of viewUstaadh,let x=index">
+                            <td>{{x+1}}</td>
+                            <td>{{ust.first_name}} {{ust.middle_name}} {{ust.last_name}}</td>
+                            <td>{{ust.roles_name}}</td>
+                            <td><button mat-raised-button color="primary" (click)="OnBadili(ust)">badilisha</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-content>
+                <form [formGroup]="changeForm">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="fill">
+                            <mat-label>ustadh</mat-label>
+                            <mat-select formControlName="roles_id">
+                              <mat-option *ngFor="let rol of viewcheo" [value]="rol.roles_id">
+                                {{rol.rolesName}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                </form>
+               <button mat-raised-button color="primary" [disabled]="roleform.invalid" (click)="OnRole()">addrole</button>
     
-</mat-card>
- 
+            </mat-card-content>
+        </mat-card>
+                
+                
+     </div>
+ </div>
+    
+
+
+
+

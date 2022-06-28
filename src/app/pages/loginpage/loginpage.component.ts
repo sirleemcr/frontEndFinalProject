@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-loginpage',
@@ -10,6 +12,7 @@ import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
 })
 export class LoginpageComponent implements OnInit {
   LoginForm !:FormGroup
+  
   
 
   constructor(private route:Router,private ustaadhservice:UstadhService) { }
@@ -37,9 +40,23 @@ export class LoginpageComponent implements OnInit {
       console.log(cr);
       sessionStorage.setItem('ustaadh',JSON.stringify(cr))
       if(cr){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'succesfully' ,
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.route.navigateByUrl("main")
       }
       else{
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'wrong username or password',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.route.navigateByUrl("/login")
       }
     })

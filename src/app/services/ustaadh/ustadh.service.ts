@@ -37,4 +37,8 @@ export class UstadhService {
   log(email:String,password:String){
     return this.http.get(this.apiUrl+"/email/"+email+"/password/"+password);
   }
+
+  getSetting(){
+    return this.http.get("http://localhost:8090/u/setting")
+  }
 }

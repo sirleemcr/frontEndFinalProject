@@ -49,7 +49,8 @@ import { StudentResultComponent } from './pages/students/student-result/student-
 import { ChangePaswordComponent } from './pages/teachers/change-pasword/change-pasword.component';
 import { MatokeoComponent } from './pages/students/matokeo/matokeo.component';
 import { RolesComponent } from './pages/roles/roles.component';
-import { ExamsubjectComponent } from './pages/exam/examsubject/examsubject.component'
+import { ExamsubjectComponent } from './pages/exam/examsubject/examsubject.component';
+
 
 
 
@@ -85,6 +86,7 @@ import { ExamsubjectComponent } from './pages/exam/examsubject/examsubject.compo
     MatokeoComponent,
     RolesComponent,
     ExamsubjectComponent,
+    
 
     
   ],
