@@ -1,8 +1,78 @@
 .date{
-    margin-left: 1400px;
+    margin-left: 1200px;
 }
 .setting button{
-    margin-left: 1400px;
+    margin-left: 1200px;
     color: white;
-    background-color: black;
+    background-color:green;
 }
+.row{
+    display: flex;
+}
+.col-md-3-im{
+    height: 3cm;
+    width: 9cm;
+    margin-left:10px;
+    display: flex;
+}
+.col-md-3-wa{
+    width: 9cm;
+    margin-left: 10px;
+    display: flex;
+}
+.col-md-3-su{
+    width: 9cm;
+    margin-left: 10px;
+    display: flex;
+}
+.col-md-3-sa{
+display: flex;
+    width:9cm;
+    margin-left: 10px;
+}
+.col-md-1-wapi{
+    width:3cm;
+    height: 3cm;
+ }
+ .col-md-2-wa{
+    background-color: aliceblue;
+    width: 6cm;
+
+ }
+ .col-md-1-mwapi{
+    width: 3cm;
+    
+ }
+ .col-md-2-mwa{
+ width: 6cm;
+ background-color:aliceblue
+
+ }
+ .col-md-1-supi{
+    width: 3cm;
+
+ }
+ .col-md-2-su{
+    width: 6cm;
+    background-color: aliceblue;
+ }
+ .col-md-1-swapi{
+    width: 3cm;
+   
+ }
+ .col-md-2-swa{
+    width: 6cm;
+    background-color: aliceblue;
+
+ }
+ .jina{
+    margin-bottom: 30px;
+    margin-left: 60px; 
+ }
+ .cheo{
+    margin-left: 100px; 
+ }
+ .picture{
+    padding-bottom:2px;
+    height: 2.5cm;
+ }

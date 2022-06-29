@@ -3,7 +3,66 @@
         {{date | date: 'dd - MMM-YYY     HH.mm'  }}
     </div>
     <div class="setting"> 
-        <button mat-raised-button (click)="OnSetting()">setting</button>
+        <mat-nav-list *ngFor="let role of rolesList">
+            <button *ngIf="role.rolesName =='admin'" mat-raised-button (click)="OnSetting()">setting</button>
+        </mat-nav-list>
+        
+    </div>
+</div>
+
+<mat-card>
+    <mat-card-content>
+        <div class="row">
+            <div class="col-md-3-wa">
+                <div class="col-md-1-wapi"><mat-icon> <img class="picture" src="assets/student.png"></mat-icon></div>
+                <div class="col-md-2-wa">
+                    <div class="jina"><h1><b>Tilmydh</b></h1></div>
+                    <div class="cheo"><b><h1>{{wanafunzi}}</h1></b></div>
+                 </div>
+        </div>
+            <div class="col-md-3-im">
+                <div class="col-md-1-mwapi"><mat-icon> <img class="picture" src="assets/ustaadh.jpg"></mat-icon></div>
+                <div class="col-md-2-mwa">
+                    <div class="jina"><h1><b>Ustaadh</b></h1></div>
+                    <div class="cheo"><b><h1>{{ustaadh}}</h1></b></div>
+                </div>
+                    
+            </div>
+            <div class="col-md-3-su">
+                <div class="col-md-1-supi"><mat-icon> <img class="picture" src="assets/subject.jpeg"></mat-icon></div>
+                <div class="col-md-2-su"> <div class="jina"><h1><b>masomo</b></h1></div>
+                <div class="cheo"><b><h1>{{somo}}</h1></b></div></div>
+            </div>
+            <div class="col-md-3-sa">
+                <div class="col-md-1-swapi"><mat-icon> <img class="picture" src="assets/class.png"></mat-icon></div>
+                <div class="col-md-2-swa"> <div class="jina"><h1><b>Swaful</b></h1></div>
+                <div class="cheo"><b><h1>{{darasa}}</h1></b></div></div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<br>
+
+<div class="row">
+    <div class="col-md-4">
+        <mat-card>
+            <mat-card-content>
+                <h1>Login information</h1>
+                JINA:<span>{{firstname}} {{middlename}} {{lastname}}</span>
+                <br>
+                BARUA PEPE:<span>{{email}}</span>
+                <br>
+                MAHALI:<span>{{place}}</span>
+                <br>
+                JINSIA:<span>{{gender}}</span>
+                <br>
+                NAMBARI YA SIMU:<span>{{phonenumber}}</span>
+                <br>
+                SOMO:<span>{{masom}}</span>
+
+
+            </mat-card-content>
+        </mat-card>
     </div>
 </div>
 

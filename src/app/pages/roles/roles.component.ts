@@ -68,8 +68,11 @@ export class RolesComponent implements OnInit {
     this.data=false
   }
 
-  Onfuta(){
-    // this.roleService.
+  Onfuta(rolesId:number){
+    this.roleService.delete(rolesId).subscribe((cr:any)=>{
+      this.configRole
+    })
+    
   }
   OnCheo(){
     this.data=false

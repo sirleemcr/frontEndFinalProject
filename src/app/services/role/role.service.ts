@@ -16,4 +16,8 @@ private  rolesApi:string='http://localhost:8090/r'
   Addrole(body:any){
     return this.http.post(this.rolesApi+"/r1",body)
   }
+
+  delete(id:number){
+    return this.http.delete("http://localhost:8090/r/delete/"+id)
+  }
 }
