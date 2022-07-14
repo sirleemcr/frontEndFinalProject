@@ -56,10 +56,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let ust of viewUstaadh,let x=index">
+                        <tr *ngFor="let ust of viewUstaadh,let x=index,let role of roles">
                             <td>{{x+1}}</td>
-                            <td>{{ust.first_name}} {{ust.middle_name}} {{ust.last_name}}</td>
-                            <td>{{ust.roles_name}}</td>
+                            <td>{{ust.firstName}} {{ust.middleName}} {{ust.lastName}}</td>
+                            <td>{{role.rolesName}}</td>
                             <td><button mat-raised-button color="primary" (click)="OnBadili(ust)">badilisha</button></td>
                         </tr>
                     </tbody>

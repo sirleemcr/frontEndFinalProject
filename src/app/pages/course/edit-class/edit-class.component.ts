@@ -61,7 +61,7 @@ export class EditClassComponent implements OnInit {
     const values =this.editForm.value;
     console.log(values)
    this.classervices.update(values).subscribe((response)=>{
-    this.router.navigateByUrl('/coursetable');
+    this.router.navigateByUrl('main/coursetable');
    },error =>{
       console.log(error)
    })

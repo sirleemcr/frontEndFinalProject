@@ -9,16 +9,16 @@
                   <tr>
                       <th>tilmiydh number</th>
                       <th>swaful</th>
-                      <th>subject</th>
-                      <th>marks</th>
+                      <th>somo</th>
+                      <th>alama</th>
                       <th>update</th>
                   </tr>
               </thead>
               <tbody>
                   <tr *ngFor="let ex of examination ,let x=index">
                   <td>{{ex.tilmydh_id}}</td>
-                  <td>{{ex.swaful_id}}</td>
-                  <td>{{ex.subject_id}}</td>
+                  <td>{{ex.fitrah_name}}</td>
+                  <td>{{ex.subject_name}}</td>
                   <td>{{ex.marks}}</td>
                   <td>
                       <button mat-raised-button color="primary">Update marks</button>
@@ -52,7 +52,8 @@
                     </mat-option>
                   </mat-select> 
                 </mat-form-field>
-                <table class="table table-border" datasource="viewStudent">
+                <div *ngIf="deta">
+                <table class="table table-border" datasource="viewStudent" >
                   <thead>
                       <tr >
                           <th>Sn</th>
@@ -81,6 +82,7 @@
                                            
             </table> 
             <button mat-raised-button color="primary" (click)="clickme()">Save</button>
+          </div>
         </form>
     </mat-card-content>    
 </mat-card> 

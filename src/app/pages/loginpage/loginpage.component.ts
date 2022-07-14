@@ -47,7 +47,7 @@ export class LoginpageComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-        this.route.navigateByUrl("main")
+        this.route.navigateByUrl("main/home")
       }
       else{
         Swal.fire({

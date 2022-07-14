@@ -1,3 +1,15 @@
-.login{
-    background-color: blue;
-}
+.picture{
+    padding-bottom:2px;
+    height: 1cm;
+ }
+ .top{
+    margin-left:5px;
+    
+ }
+ .Onchange{
+   background-color: blue;
+ }
+ .Onback{
+   margin-left: 40px;
+   background-color: red;
+ }

@@ -69,10 +69,11 @@ export class MatokeoComponent implements OnInit {
   }
 
   OnPrint(){
-    this.router.navigateByUrl("/main/result")
+    this.router.navigateByUrl("result")
   }
-  // send(){
-  //   this.examService.subject_name=;
-  // }
+  send(ma:any){
+    // this.examService.subject_name=ma.subject_name
+    // this.examService.marks=ma.marks
+  }
 
 }

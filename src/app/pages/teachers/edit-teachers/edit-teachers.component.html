@@ -35,18 +35,26 @@
                     
                 </div>
                 <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label> Nationality</mat-label>
-                        <input matInput formControlName="nationality" placeholder="name" value="name">
-                      </mat-form-field>
+                    
+                        <mat-form-field appearance="outline" >
+                          <mat-label>nationality</mat-label>
+                          <select matNativeControl required formControlName="nationality">
+                            <option value="Tanzania">Tanzania</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Saudia-arabia">Saudia-arabia</option>
+                            <option value="Kenya">Kenya</option>
+                          </select>
+                        </mat-form-field>
                     
                 </div>
                 <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label> gender</mat-label>
-                        <input matInput formControlName="gender" placeholder="gender" value="name">
+                    <mat-form-field appearance="outline" >
+                        <mat-label>jinsia</mat-label>
+                        <select matNativeControl required formControlName="gender">
+                          <option value="female">female</option>
+                          <option value="male">male</option>
+                        </select>
                       </mat-form-field>
-                    
                 </div>
                 <div class="col-md-6">
                     <mat-form-field appearance="outline" class=" w-100 example-full-width" >

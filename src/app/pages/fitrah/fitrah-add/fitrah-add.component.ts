@@ -28,14 +28,14 @@ export class FitrahAddComponent implements OnInit {
 
 
   OnBack(){
-    this.route.navigateByUrl('/fitrah')
+    this.route.navigateByUrl('main/fitrah')
   }
   OnSave(){
     const values=this.FitrahForm.value;
     console.log("Fitrah =>",values);
     this.fitrahService.add(values).subscribe((response:any)=>{
      console.log(" Fitrah =>",response);
-     this.route.navigateByUrl("/fitrah");
+     this.route.navigateByUrl("main/fitrah");
      Swal.fire(
       'Fitrah inserted!',
       'You clicked the button!',

@@ -42,13 +42,17 @@ const routes: Routes = [
     component:TeacherAddComponent
   },
   {
+    path:'result',
+    component:StudentResultComponent
+  },
+  {
     path:'main',
     component:MainLayoutComponent,
     canActivate:[AuthguardGuard],
     children:
     [
       {
-        path:'',
+        path:'home',
         component:DashbordComponent
       },
       
@@ -89,7 +93,7 @@ const routes: Routes = [
       component:EditClassComponent
     },
     {
-      path:'edit-teacher/:id',
+      path:'edit-teacher/:ustaadh_id',
       component:EditTeachersComponent
     },
     {
@@ -112,7 +116,7 @@ const routes: Routes = [
       component:EditSubjectComponent
     },
     {
-      path:'edit-student',
+      path:'edit-student/:id',
       component:EditStudentComponent
     },
     {
@@ -131,10 +135,7 @@ const routes: Routes = [
       path:'admin',
       component:AdminComponent
     },
-    {
-      path:'result',
-      component:StudentResultComponent
-    },
+    
     {
       path:'password',
       component:ChangePaswordComponent

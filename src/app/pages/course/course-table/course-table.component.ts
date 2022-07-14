@@ -28,11 +28,11 @@ export class CourseTableComponent implements OnInit {
    })
   }
   OnCreate(){
-    this.router.navigateByUrl('/create-class');
+    this.router.navigateByUrl('/main/create-class');
 
   }
   OnEdit(classes:any){
-    this.router.navigateByUrl('/edit-class/'+classes.swaful_id)
+    this.router.navigateByUrl('/main/edit-class/'+classes.swaful_id)
 
   }
 

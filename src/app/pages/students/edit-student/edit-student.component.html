@@ -1,89 +1,104 @@
 <mat-card>
     <mat-card-title>
-        Update information of Tilmiydh
+      <span class="title"><b>badili taarifa  za {{fistname}} {{middlename}} {{lastName}}</b></span>
     </mat-card-title>
     <mat-card-content>
-        <div>
+        <div class="back">
             <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
        </div>
-        <form [formGroup]="editForm" autocomplete="off">
-            <tr>
-                <td>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <mat-form-field appearance="outline" class="row" >
-                                <mat-label>First Name</mat-label>
-                                <input matInput formControlName="firstName" placeholder="firstName" value="firstName">
-                            </mat-form-field>
-
-                            <mat-form-field appearance="outline" class="row" >
-                                <mat-label>Last Name</mat-label>
-                                <input matInput formControlName="lastName" placeholder="lastName" value="lastName">
-                            </mat-form-field>
-
-                        </div>
-                    <div class="col">
-                        <div class="row-md-3">
-                           <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                                <mat-label>Middle Name</mat-label>
-                                <input matInput formControlName="middleName" placeholder="middleName" value="middleName">
-                            </mat-form-field>
-                        </div>
-                        <div class="row-md-3">
-                                <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                                    <mat-label>Place</mat-label>
-                                    <input matInput formControlName="place" placeholder="place" value="place">
-                                </mat-form-field>
-                        </div>
-                    </div>
-                    </div>
-        <div class="col-md-6">
-          <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-              <mat-label> Gender</mat-label>
-              <input matInput formControlName="gender" placeholder="name" value="name">
+    </mat-card-content>
+</mat-card>
+<hr>
+<mat-card>       
+      <form [formGroup]="editForm" autocomplete="off">
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="row" >
+                <mat-label>Jina la kwanza</mat-label>
+                <input matInput formControlName="firstName" placeholder="firstName" value="firstName">
             </mat-form-field>
-          
-      </div>
-        
-    <div class="col-md-6">
-      <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-          <mat-label>Nationality</mat-label>
-          <input matInput formControlName="nationality" placeholder="nationality" value="nationality">
-        </mat-form-field>
-      
-  </div>
-  <div class="col-md-6">
-    <mat-form-field appearance="fill">
-        <mat-label>swaful</mat-label>
-        <mat-select formControlName="swaful_id">
-          <mat-option *ngFor="let swa of SwafulView" [value]="swa.swaful_id">
-            {{swa.swaful_name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-  </div>
-<div class="col-md-6">
-  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-      <mat-label>Parent number</mat-label>
-      <input matInput formControlName="parent_number" placeholder="number" value="number">
-    </mat-form-field>
-  
-</div>
-<div class="col-md-6">
-  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-      <mat-label>Parent Name</mat-label>
-      <input matInput formControlName="parent_name" placeholder="parent_name" value="parent_name">
-    </mat-form-field>
-  
-</div> 
-                    
-                </td>
-            </tr>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="row" >
+                <mat-label>Jina la ukoo</mat-label>
+                <input matInput formControlName="lastName" placeholder="lastName" value="lastName">
+            </mat-form-field>
+            </div>
+            <div class="col-md-3"> 
+              <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                   <mat-label>Jina la kati</mat-label>
+                   <input matInput formControlName="middleName" placeholder="middleName" value="middleName">
+               </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+              <mat-label>mahali anapoishi</mat-label>
+              <input matInput formControlName="place" placeholder="place" value="place">
+          </mat-form-field>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" >
+                <mat-label>gender</mat-label>
+                <select matNativeControl required formControlName="gender">
+                  <option value="female">female</option>
+                  <option value="male">male</option>
+                </select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>nationality</mat-label>
+                <select matNativeControl required formControlName="nationality">
+                  <option value="Tanzania">Tanzania</option>
+                  <option value="Uganda">Uganda</option>
+                  <option value="Saudia-arabia">Saudia-arabia</option>
+                  <option value="Kenya">Kenya</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Somalia">Somalia</option>
+                  <option value="Yemen">Yemen</option>
+                  <option value="Burundi">BuRundi</option>
+                  <option value="Rwanda">rwanda</option>
+                  <option value="india">india</option>
+                  
+                </select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3"> <mat-form-field appearance="fill">
+              <mat-label>swaful</mat-label>
+              <mat-select formControlName="swaful_id">
+                <mat-option *ngFor="let swa of SwafulView" [value]="swa.swaful_id">
+                  {{swa.swaful_name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>Parent number</mat-label>
+                <input matInput formControlName="parent_number" placeholder="number" value="number">
+              </mat-form-field>
+            </div>
+           
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>Parent Name</mat-label>
+                <input matInput formControlName="parent_name" placeholder="parent_name" value="parent_name">
+              </mat-form-field>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+           
+          </div>
 
-        </form>
+
+ </form>
         <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="Onsave()" >
             <mat-icon>save</mat-icon>
             save
           </button>
-    </mat-card-content>
 </mat-card>

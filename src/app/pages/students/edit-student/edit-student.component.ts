@@ -16,6 +16,9 @@ import Swal from 'sweetalert2';
 export class EditStudentComponent implements OnInit {
 SwafulView:any[]=[]  
 editForm !:FormGroup
+fistname:any
+lastName:any
+middlename:any
 
   constructor(private route:ActivatedRoute, private router:Router,private studentService:StudentsService,private classServive:ClassService) { }
 
@@ -26,7 +29,11 @@ editForm !:FormGroup
      console.log("values =>",ParamValue);
      const id=ParamValue.id;
      this.OnFetchData(id);
+     
+    
    })
+   
+
   }
 
   OnFetchData(id:number){
@@ -42,6 +49,11 @@ editForm !:FormGroup
       this.editForm.get('swaful_id')?.setValue(response.swaful_id);
       this.editForm.get('parent_name')?.setValue(response.parent_name);
       this.editForm.get('parent_number')?.setValue(response.parent_number)
+
+      this.fistname=response.firstName
+      this.lastName=response.lastName
+      this.middlename=response.middleName
+  
 
     })
     
@@ -74,7 +86,7 @@ OnBack(){
 
 
   
-  this.router.navigateByUrl('/student')
+  this.router.navigateByUrl('main/student')
 }
   Onsave(){
     Swal.fire({
@@ -88,7 +100,7 @@ OnBack(){
 
     const values = this.editForm.value;
     this.studentService.update(values).subscribe((response)=>{
-    this.router.navigateByUrl("/student");
+    this.router.navigateByUrl("main/student");
        })
         Swal.fire('Saved!', '', 'success')
       } else if (result.isDenied) {

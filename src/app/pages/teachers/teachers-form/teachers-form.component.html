@@ -2,8 +2,7 @@
     <mat-card-title>USTAADH</mat-card-title>
     <mat-card-subtitle> LIST OF USTAADH</mat-card-subtitle>
     <mat-card-content>
-        <button mat-raised-button color="primary" (click)="OnAdd()"> Add Ustadh</button>
-        <button mat-raised-button color="primary" (click)="Addrole()">add role</button>
+        <button class="add" mat-raised-button color="primary" (click)="OnAdd()"> Add Ustadh</button>
         <table class="table table-border">
           <thead>
               <tr>
@@ -35,7 +34,7 @@
                   <td>{{Ustaadhes.nationality}}</td>
                   <td>
                       <button mat-raised-button color="primary" (click)="OnEdit(Ustaadhes)">Edit</button>
-                      <button mat-raised-button color="primary" (click)="OnDelete(Ustaadhes.id)">Delete</button>
+                      <button class="delete" mat-raised-button color="primary" (click)="OnDelete(Ustaadhes.ustaadh_id)">Delete</button>
                   </td>
 
               </tr>

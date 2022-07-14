@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UstadhService {
+  email:any
   private apiUrl:string='http://localhost:8090/u';
 
   constructor(private http:HttpClient) { }

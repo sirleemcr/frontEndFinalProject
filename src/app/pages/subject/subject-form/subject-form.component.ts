@@ -28,12 +28,12 @@ export class SubjectFormComponent implements OnInit {
 
 
   OnAdd(){
-    this.route.navigateByUrl('/main/add-subject')
+    this.route.navigateByUrl('main/add-subject')
   }
 
 
   OnUpdate(ust:any){
-   this.route.navigateByUrl('/main/edit-subject/'+ust.id)
+   this.route.navigateByUrl('main/edit-subject/'+ust.id)
   }
   OnDelete(id:any){
     this.subjectService.delete(id).subscribe((response)=>{

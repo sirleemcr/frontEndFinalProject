@@ -67,7 +67,7 @@ export class FitrahEditComponent implements OnInit {
     
   }
   OnBack(){
-    this.router.navigateByUrl('/fitrah')
+    this.router.navigateByUrl('main/fitrah')
   }
   
 

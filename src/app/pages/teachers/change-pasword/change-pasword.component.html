@@ -1,23 +1,71 @@
-<hr>
-<mat-card class="login">
-        <h1>Login information</h1>
-</mat-card>
 
-    <h1>Full Name</h1>
-    <span style="font-size: 30px">{{firstName}} {{middleName}} {{lastName}}</span>
-<hr>
-<h1>Gender</h1>
-<span style="font-size:40px;">{{gender}}</span>
-<hr>
-<h1>login Email</h1>
-<span>{{email}}</span>
-<hr>
-<h1>password</h1>
-<form>
-    <input type="text" name="password" id="">
-</form>
-<hr>
-<label > Email</label>
-<form>
-    <input type="text">
-</form>
+       <div class="row">
+        <div class="col-md-1">
+            <img class="picture" src="assets/person.png">
+        </div>
+        <div class="col-md-4"><h1><b class="top">PERSONAL BACKGROUND SUMMARY</b></h1></div>
+       </div>
+       <hr>
+<div class="row">
+<div class="col-md-3" *ngIf="dete">
+    <mat-card>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-5" style="font-size: 20px">Full Name</div>
+                <div class="col-md-6" style="font-size: 20px">{{firstName}} {{middleName}} {{lastName}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-5" style="font-size: 20px">Gender</div>
+                <div class="col-md-6" style="font-size: 20px">{{gender}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-5" style="font-size: 20px">Nationaity</div>
+                <div class="col-md-6" style="font-size: 20px">{{nationality}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-5" style="font-size: 20px">dob</div>
+                <div class="col-md-6" style="font-size: 20px">{{dob}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-5" style="font-size: 20px">email</div>
+                <div class="col-md-6" style="font-size: 20px">{{email}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-5" style="font-size: 17px">Phone Number</div>
+                <div class="col-md-6" style="font-size: 20px">{{phone_number}}</div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div class="col-md-1" *ngIf="dete">
+    <button mat-raised-button color="primary" (click)="Onclick()">change password</button>
+</div>
+
+<div class="col-md-4" *ngIf="data">
+<mat-card >
+    <mat-card-title>change password</mat-card-title>
+    <form [formGroup]="form ">
+        <div class="col-md-6">
+            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>input new pasword</mat-label>
+                <input type="password" matInput formControlName="newpassword" placeholder="pasword" value="password">
+              </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>confirm password</mat-label>
+                <input type="password" matInput formControlName="confirmpassword" placeholder="pasword" value="password">
+              </mat-form-field>
+        </div>
+    </form>
+  <div>  <button  class="Onchange" mat-raised-button (click)="Onchenge()">submit</button>
+   <button  class="Onback" mat-raised-button (click)="Onbacked()">back</button></div>
+
+</mat-card>
+</div>
+</div>

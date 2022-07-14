@@ -59,13 +59,7 @@ export class StudentsService {
   }
 
 
-  OnfetchData(){
-    this.router.navigateByUrl('/result').then(()=>{
-      this.router.navigateByUrl('result')
-      window.print();
-      this.router.navigateByUrl("")
-    })
-  }
+  
 
 
   

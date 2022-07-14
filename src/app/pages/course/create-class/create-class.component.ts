@@ -35,7 +35,7 @@ export class CreateClassComponent implements OnInit {
         'You clicked the button!',
         'success'
       )
-      this.router.navigateByUrl('/coursetable');
+      this.router.navigateByUrl('main/coursetable');
     },
     (error:HttpErrorResponse)=>{
      console.log(error);
@@ -45,7 +45,7 @@ export class CreateClassComponent implements OnInit {
   }
 
   OnBack(){
-    this.router.navigateByUrl('/coursetable');
+    this.router.navigateByUrl('main/coursetable');
   }
 
 }

@@ -18,15 +18,15 @@ export class EditTeachersComponent implements OnInit {
     this.configEditFormTeacher();
     this.route.params.subscribe((ParamValues:any)=>{
       console.log(ParamValues)
-      const id= ParamValues.id
+      const id= ParamValues.ustaadh_id
       this.onfetchUstaadh(id);
     })
   }
 
-  onfetchUstaadh(id:number){
-    this.ustaadhService.getById(id).subscribe((response:any)=>{
+  onfetchUstaadh(ustaadh_id:number){
+    this.ustaadhService.getById(ustaadh_id).subscribe((response:any)=>{
       console.log("dd",response);
-      this.editFormTeacher.get('id')?.setValidators(response.id);
+      this.editFormTeacher.get('ustaadh_id')?.setValue(response.ustaadh_id);
       this.editFormTeacher.get('firstName')?.setValue(response.firstName);
       this.editFormTeacher.get('middleName')?.setValue(response.middleName);
       this.editFormTeacher.get('lastName')?.setValue(response.lastName);
@@ -35,12 +35,16 @@ export class EditTeachersComponent implements OnInit {
       this.editFormTeacher.get('gender')?.setValue(response.gender);
       this.editFormTeacher.get('phone_number')?.setValue(response.phone_number);
       this.editFormTeacher.get('email')?.setValue(response.email)
+      this.editFormTeacher.get('rolesList')?.setValue(response.rolesList),
+      this.editFormTeacher.get('password')?.setValue(response.password),
+      this.editFormTeacher.get("subjectList")?.setValue(response.subjectList)
     })
   }
 
   configEditFormTeacher(){
     this.editFormTeacher= new FormGroup({
-      id:new FormControl(null),
+      ustaadh_id:new FormControl(null),
+      rolesList:new FormControl(null),
       firstName:new FormControl(null,Validators.required),
       lastName: new FormControl(null,Validators.required),
       middleName:new FormControl(null,Validators.required),
@@ -48,7 +52,9 @@ export class EditTeachersComponent implements OnInit {
       nationality:new FormControl(null, Validators.required),
       gender:new FormControl(null,Validators.required),
       phone_number:new FormControl(null,Validators.required),
-      email:new FormControl(null,Validators.required)
+      email:new FormControl(null,Validators.required),
+      password:new FormControl(null),
+      subjectList:new FormControl(null)
     })
   }
 
@@ -59,6 +65,7 @@ export class EditTeachersComponent implements OnInit {
   }
   OnSave(){
     const values=this.editFormTeacher.value;
+    console.log("values",values)
     this.ustaadhService.update(values).subscribe((response)=>{
       this.router.navigateByUrl('/main/teacher')
     })

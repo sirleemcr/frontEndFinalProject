@@ -1,14 +1,15 @@
 <mat-card>
-    <mat-card-title>
-      tilmydh
+    <mat-card-title class="title">
+      tilmydh Registration Form
     </mat-card-title>
-    <mat-card-subtitle>
-        Tilmydh Registration Form
-    </mat-card-subtitle>
     <mat-card-content>
       <div>
-        <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
+        <button mat-raised-button color="primary" (click)="OnBack()">rudi</button>
       </div>
+</mat-card-content>
+</mat-card>
+<hr>
+<mat-card>      
       <form [formGroup]="studentForm" autocomplete="off">
 
         <div class="row">
@@ -53,6 +54,12 @@
                   <option value="Uganda">Uganda</option>
                   <option value="Saudia-arabia">Saudia-arabia</option>
                   <option value="Kenya">Kenya</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Somalia">Somalia</option>
+                  <option value="Yemen">Yemen</option>
+                  <option value="Burundi">Buundi</option>
+                  <option value="Rwanda">rwanda</option>
+                  <option value="india">india</option>
                   
                 </select>
               </mat-form-field>
@@ -95,5 +102,5 @@
             <mat-icon>save</mat-icon>
             save
           </button>
-    </mat-card-content>
+    
 </mat-card>

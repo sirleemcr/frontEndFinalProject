@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-title>Add student</mat-card-title>
-    <button mat-raised-button color="primary" (click)="OnBack()">Back</button>
+    <button mat-raised-button color="primary" style="margin-left: 1200px;" (click)="OnBack()">Back</button>
     <mat-card-content>
         <form [formGroup]="editsubjectform" autocomplete="off">
 
@@ -14,7 +14,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>ustadh</mat-label>
                 <mat-select formControlName="ustaadh_id">
-                  <mat-option *ngFor="let ustadh of UstadhView" [value]="ustadh.id">
+                  <mat-option *ngFor="let ustadh of UstadhView" [value]="ustadh.ustaadh_id">
                     {{ustadh.firstName}}
                   </mat-option>
                 </mat-select>
@@ -47,7 +47,7 @@
         </form>
 
         <div>
-            <button mat-raised-button color="Primary" [disabled]="editsubjectform.invalid" (click)="OnChange()">Add</button>
+            <button mat-raised-button color="primary" [disabled]="editsubjectform.invalid" (click)="OnChange()">Add</button>
         </div>
     </mat-card-content>
 </mat-card>

@@ -1,4 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -19,6 +19,7 @@ export class RolesComponent implements OnInit {
   cheo=false
   addrole=false
   changeForm !:FormGroup
+  roles:any
 
   constructor( private ustaadhServce:UstadhService, private router:Router,private roleService:RoleService) { }
 
@@ -41,9 +42,13 @@ export class RolesComponent implements OnInit {
   }
 
   getustaadh(){
-    this.ustaadhServce.getSetting().subscribe((cr:any)=>{
-      console.log(cr)
+    this.ustaadhServce.getAll().subscribe((cr:any)=>{
+      console.log("roless=>",cr.rolesList)
       this.viewUstaadh=cr
+      cr.forEach((element:any) => {
+        console.log("roless=>",element.rolesList)
+        this.roles = element.rolesList
+      });
     })
   }
 
@@ -84,7 +89,7 @@ export class RolesComponent implements OnInit {
     this.data=false
     this.addrole=false
     this.dat=false
-    this.router.navigateByUrl("main/role/"+ust.ustaadh_id)
+    this.router.navigateByUrl("main/edit-teacher/"+ust.ustaadh_id)
   }
 
 }

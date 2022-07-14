@@ -29,13 +29,13 @@ export class TeachersFormComponent implements OnInit {
 
 
   OnEdit(Ustaadhes:any){
-    this.route.navigateByUrl('/edit-teacher/'+Ustaadhes.id)
+    this.route.navigateByUrl('main/edit-teacher/'+Ustaadhes.ustaadh_id)
    
     
   }
-OnDelete(id:number){
-  this.ustadhService.delete(id).subscribe((response)=>{
-    this.fetchUstaadh;
+OnDelete(ustaadh_id:number){
+  this.ustadhService.delete(ustaadh_id).subscribe((response)=>{
+    this.fetchUstaadh();
   })
 
 }
@@ -44,9 +44,7 @@ OnAdd(){
 
 }
 
-Addrole(){
-  this.route.navigateByUrl('/main/role')
-}
+
 
 
 }

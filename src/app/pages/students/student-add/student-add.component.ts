@@ -53,7 +53,7 @@ export class StudentAddComponent implements OnInit {
 
 
   OnBack(){
-    this.router.navigateByUrl('/student')
+    this.router.navigateByUrl('/main/student')
   }
 
   Onsave(){
@@ -64,7 +64,7 @@ export class StudentAddComponent implements OnInit {
       Swal.fire('Tilmydh inserted!',
       'You clicked the button!',
       'success')
-      this.router.navigateByUrl('/student');
+      this.router.navigateByUrl('/main/student');
       
     },
     (error:HttpErrorResponse)=>{

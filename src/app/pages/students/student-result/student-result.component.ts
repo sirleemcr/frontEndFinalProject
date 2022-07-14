@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExamService } from 'src/app/services/exam/exam.service';
 
 import { StudentsService } from 'src/app/services/student/students.service';
 
@@ -9,17 +10,19 @@ import { StudentsService } from 'src/app/services/student/students.service';
 })
 export class StudentResultComponent implements OnInit {
 
-  constructor( private result:StudentsService) { }
+  constructor( private result:StudentsService,private examser:ExamService) { }
   firstName:any
   lastName:any
   middleName:any
   swaful_name:any
+  subject_name:any
+  marks:any
+  
 
   ngOnInit(): void {
-    this.firstName=this.result.firstName;
-    this.lastName=this.result.lastName;
-    this.middleName=this.result.middleName;
-    this.swaful_name=this.result.swaful_name;
+    // this.subject_name=this.examser.subject_name
+    // this.marks=this.examser.marks
+    this.examser.OnfetchData();
     
   }
 

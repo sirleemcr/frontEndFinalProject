@@ -6,80 +6,81 @@
     <mat-card-content>
         <div class="form">
             <form [formGroup]="addFormTeacher" autocomplete="off">
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label> first name</mat-label>
-                        <input matInput formControlName="firstName" placeholder="firstName" value="firstName">
-                      </mat-form-field>
-                    
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label> last name</mat-label>
-                        <input matInput formControlName="lastName" placeholder="lastname" value="lastname">
-                      </mat-form-field>
-                    
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label>middle Name</mat-label>
-                        <input matInput formControlName="middleName" placeholder="middlename" value="middlename">
-                      </mat-form-field>
-                    
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label> place</mat-label>
-                        <input matInput formControlName="place" placeholder="place" value="place">
-                      </mat-form-field>
-                    
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" >
-                        <mat-label>nationality</mat-label>
-                        <select matNativeControl required formControlName="nationality">
-                          <option value="Tanzania">Tanzania</option>
-                          <option value="Uganda">Uganda</option>
-                          <option value="Saudia-arabia">Saudia-arabia</option>
-                          <option value="Kenya">Kenya</option>
-                          
-                        </select>
-                      </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" >
-                        <mat-label>gender</mat-label>
-                        <select matNativeControl required formControlName="gender">
-                          <option value="female">female</option>
-                          <option value="male">male</option>
-                          
-                        </select>
-                      </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label>Phone number</mat-label>
-                        <input matInput formControlName="phone_number" placeholder="phone number" value="phone_number">
-                      </mat-form-field>
-                    
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline" class=" w-100 example-full-width" >
-                        <mat-label> email</mat-label>
-                        <input matInput formControlName="email" placeholder="name" value="name">
-                      </mat-form-field>
-                    
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                      <mat-label>Jina la kwanza</mat-label>
+                      <input matInput formControlName="firstName" placeholder="firstName" value="firstName">
+                    </mat-form-field>
                 </div>
                 <div class="col-md-4">
-                    <mat-form-field appearance="fill">
-                      <mat-label>role</mat-label>
-                      <mat-select formControlName="rolesId">
-                        <mat-option *ngFor="let sw of getRole" [value]="sw.rolesId">
-                          {{sw.rolesName}}
-                        </mat-option>
-                      </mat-select> 
-                    </mat-form-field>
-                  </div>
+                  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                      <mat-label>jina la ukoo</mat-label>
+                      <input matInput formControlName="lastName" placeholder="lastname" value="lastname">
+                    </mat-form-field>     
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                      <mat-label>jina la kati</mat-label>
+                      <input matInput formControlName="middleName" placeholder="middlename" value="middlename">
+                    </mat-form-field>  
+              </div>
+         </div>
+         <div class="row">
+           <div class="col-md-4">
+            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+              <mat-label> place</mat-label>
+              <input matInput formControlName="place" placeholder="place" value="place">
+            </mat-form-field>
+           </div>
+           <div class="col-md-2">
+            <mat-form-field appearance="outline" >
+              <mat-label>nationality</mat-label>
+              <select matNativeControl required formControlName="nationality">
+                <option value="Tanzania">Tanzania</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Saudia-arabia">Saudia-arabia</option>
+                <option value="Kenya">Kenya</option>
+              </select>
+            </mat-form-field>
+           </div>
+           <div class="col-md-2">
+            <mat-form-field appearance="outline" >
+              <mat-label>jinsia</mat-label>
+              <select matNativeControl required formControlName="gender">
+                <option value="female">female</option>
+                <option value="male">male</option>
+              </select>
+            </mat-form-field>
+           </div>
+
+           <div class="col-md-2">
+            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label>simu namba</mat-label>
+                <input matInput formControlName="phone_number" placeholder="phone number" value="phone_number">
+              </mat-form-field>    
+           </div>
+     </div>
+     <div class="row">
+        <div class="col-md-3">
+            <mat-form-field appearance="outline" class=" w-100 example-full-width" >
+                <mat-label> email</mat-label>
+                <input matInput formControlName="email" placeholder="name" value="name">
+              </mat-form-field>   
+        </div>
+           
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>cheeo</mat-label>
+            <mat-select formControlName="rolesId">
+              <mat-option *ngFor="let sw of getRole" [value]="sw.rolesId">
+                {{sw.rolesName}}
+              </mat-option>
+            </mat-select> 
+          </mat-form-field>
+        </div>
+     </div>
+
             </form>
             <div class="back">
                 <button mat-raised-button color="primary" [disabled]="addFormTeacher.invalid" (click)="OnSave()">save</button>

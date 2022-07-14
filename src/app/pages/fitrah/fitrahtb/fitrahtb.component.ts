@@ -35,7 +35,7 @@ export class FitrahtbComponent implements OnInit {
   }
    
   OnUpdate(fit:any){
-    this.route.navigateByUrl('/fitrah-edit/'+fit.id)
+    this.route.navigateByUrl('main/fitrah-edit/'+fit.id)
 
   }
 

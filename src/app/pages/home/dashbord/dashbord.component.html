@@ -1,7 +1,7 @@
 <div>
-    <div class="date">
+    <!-- <div class="date">
         {{date | date: 'dd - MMM-YYY     HH.mm'  }}
-    </div>
+    </div> -->
     <div class="setting"> 
         <mat-nav-list *ngFor="let role of rolesList">
             <button *ngIf="role.rolesName =='admin'" mat-raised-button (click)="OnSetting()">setting</button>

@@ -13,6 +13,9 @@ import { UstadhService } from 'src/app/services/ustaadh/ustadh.service';
 export class CreateTeacherComponent implements OnInit {
   addFormTeacher !:FormGroup
   getRole:any[]=[]
+  password:any
+  email: any;
+
 
   constructor(private router:Router,private ustaadhservice:UstadhService,private rolesService:RoleService) {
  
@@ -20,17 +23,22 @@ export class CreateTeacherComponent implements OnInit {
 
   ngOnInit(): void {
     this.addFormTeacherConfig()
+    this.email=this.ustaadhservice.email
+    this.addFormTeacher.get("password")?.setValue(this.email)
     this.getroleconfig()
+
   }
 
   getroleconfig(){
     this.rolesService.getrole().subscribe((res:any)=>{
       console.log("role=>",res)
       this.getRole=res
+
     })
   }
 
   addFormTeacherConfig(){
+    
     this.addFormTeacher=new FormGroup({
       firstName:new FormControl(null,Validators.required),
       lastName: new FormControl(null,Validators.required),
@@ -40,7 +48,9 @@ export class CreateTeacherComponent implements OnInit {
       gender:new FormControl(null,Validators.required),
       phone_number:new FormControl(null,Validators.required),
       email:new FormControl(null,Validators.email),
-      rolesId:new FormControl('',Validators.required)
+      rolesId:new FormControl('',Validators.required),
+      
+      
     })
 
   }
@@ -49,17 +59,18 @@ export class CreateTeacherComponent implements OnInit {
     this.router.navigateByUrl('/main/teacher')
   }
   OnSave(){
-    const values=this.addFormTeacher.value;
-    console.log('ustaadh =>', values);
-    this.ustaadhservice.add(values).subscribe((response:any)=>{
-      console.log('create ustaadh =>',response);
-      alert('saved')
-      this.router.navigateByUrl('/main/teacher');
-    },
-    (error:HttpErrorResponse)=>{
-     console.log(error);
-    }
-    )
+    const values=this.addFormTeacher.value
+    console.log("value",values)
+    // console.log('ustaadh =>', values);
+    // this.ustaadhservice.add(values).subscribe((response:any)=>{
+    //   console.log('create ustaadh =>',response);
+    //   alert('saved')
+    //   this.router.navigateByUrl('/main/teacher');
+    // },
+    // (error:HttpErrorResponse)=>{
+    //  console.log(error);
+    // }
+    // )
     
   }
 

@@ -81,7 +81,7 @@ fethData(id:number){
   }
 
   OnBack(){
-    this.route.navigateByUrl('/subject')
+    this.route.navigateByUrl('main/subject')
   }
   OnChange(){
 
@@ -96,7 +96,7 @@ fethData(id:number){
       if (result.isConfirmed) {
         const values =this.editsubjectform.value;
         this.subjectService.update(values).subscribe((response)=>{
-          this.route.navigateByUrl('/subject');
+          this.route.navigateByUrl('main/subject');
         })
         Swal.fire('Saved!', '', 'success')
       } else if (result.isDenied) {

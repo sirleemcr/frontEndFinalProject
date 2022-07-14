@@ -1,25 +1,23 @@
 <mat-card>
     
-    <mat-card-header>madarasa</mat-card-header>
-    <mat-card-subtitle>list ya madarasa</mat-card-subtitle>
+    <mat-card-header><b style="margin-left: 650px;">Swaful</b></mat-card-header>
+    
     <mat-card-content>
         <div>
-            <button mat-raised-button color="accent" (click)="OnCreate()">Add Class</button>
+            <button mat-raised-button color="accent" style="margin-left: 1200px;" (click)="OnCreate()"><mat-icon>input</mat-icon>darasa jipya</button>
 
         </div>
         <table class="table table-border">
             <thead>
                 <tr >
-                    <th>SN</th>
-                    <th>ID</th>
-                    <th>CLASS NAME</th>
-                    <Th>Action</Th>
+                    <th>#</th>
+                    <th>jina la swaful</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let classes of classList,let x=index">
                     <td>{{x+1}}</td>
-                    <td>{{classes.id}}</td>
                     <td>{{classes.swaful_name}}</td>
                     <td>
                     <button mat-raised-button color='primary'(click)="OnEdit(classes)" >
@@ -27,7 +25,7 @@
                             edit
                         </mat-icon>
                     edit</button>
-                    <button mat-raised-button color='primary' (click)="Ondelete(classes.swaful_id)" >
+                    <button mat-raised-button color='primary' style="margin-left: 10px;" (click)="Ondelete(classes.swaful_id)" >
                         <mat-icon>
                             delete
                         </mat-icon>

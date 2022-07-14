@@ -2,7 +2,7 @@
     <mat-card-title>
         masomo
     </mat-card-title>
-    <button mat-raised-button color="primary" (click)="OnAdd()"> Add subject</button>
+    <button style="margin-left: 1200px;" mat-raised-button color="primary" (click)="OnAdd()"><mat-icon>input</mat-icon>somo jipya</button>
     <mat-card-content>
         <table class="table table-border">
             <thead>
@@ -25,8 +25,8 @@
                     <td>{{ust.fitrah_id}}</td>
                     <td>{{ust.swaful_name}}</td>
                     <td>
-                        <button mat-raised-button color="primary" (click)="OnUpdate(ust)">update</button>
-                        <button mat-raised-button color="primary" (click)="OnDelete(ust.id)">delete</button>
+                        <button mat-raised-button color="primary" (click)="OnUpdate(ust)"><mat-icon>edit</mat-icon>badili</button>
+                        <button style="margin-left: 5px;" mat-raised-button color="primary" (click)="OnDelete(ust.id)"><mat-icon>delete</mat-icon>futa</button>
                     </td>
                 </tr>
             </tbody>

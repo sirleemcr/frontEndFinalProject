@@ -63,7 +63,7 @@ export class AddSubjectComponent implements OnInit {
    }
 
   OnBack(){
-   this.route.navigateByUrl('/subject')
+   this.route.navigateByUrl('main/subject')
   }
   OnAdd(){
     const values= this.addsubjectform.value;

@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClassService } from 'src/app/services/class/class.service';
 import { StudentsService } from 'src/app/services/student/students.service';
+import Swal from 'sweetalert2';
+Swal
 
 @Component({
   selector: 'app-students-form',
@@ -58,16 +60,33 @@ fetchAllStudent(){
 
   
   OnEdit(stud:any){
-    this.route.navigateByUrl('/main/edit-student/'+stud.tilmydh_id)
+    this.route.navigateByUrl('main/edit-student/'+stud.tilmydh_id)
 
   }
 
 
   OnDelete(id:number){
-    this.studentservice.delete(id).subscribe(res =>{
-      this.fetchAllStudent;
-      
+    Swal.fire({
+      title: 'Do you want to delete?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'delete',
+      denyButtonText: `Don't delete`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+     this.studentservice.delete(id).subscribe((response:any)=>{
+     this.fetchAllStudent();
+     this.route.navigateByUrl("main/student")
+        })
+        Swal.fire( '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire( '', 'info')
+      }
     })
+
+
+  
   }
 
   OnSelect(){
@@ -84,7 +103,7 @@ fetchAllStudent(){
     console.log("id =>",this.selectbyid.value.tilmydh_id)
     this.studentservice.getById(this.selectbyid.value.tilmydh_id).subscribe((response:any)=>{
       console.log("student by id => ", response)
-      this.studentList=response;
+      this.studentList=[response]
     })
   }
 

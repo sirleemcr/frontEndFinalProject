@@ -12,6 +12,7 @@ import { SubjectService } from 'src/app/services/subject/subject.service';
   styleUrls: ['./examsubject.component.css']
 })
 export class ExamsubjectComponent implements OnInit {
+  deta=false
   ustaadh_id ! :number
   viewClass:any[]=[]
   viewStudent:any[]=[]
@@ -125,6 +126,7 @@ clickme(){
 
   this.examService.add(this.skillss.value).subscribe((res)=>{
     console.log("succesfully");
+    this.deta=false
   })
     
   
@@ -134,17 +136,26 @@ clickme(){
     console.log(this.upperForm.value.swaful_id)
     this.studentService.getbyustaadh(this.upperForm.value.swaful_id,this.upperForm.value.subject_id,this.ustaadh_id).subscribe((response:any)=>{
       console.log("student view =>",response)
-      let i=0
-      for(i;i<response.length;i++){
-       this.addSkill() 
+      if(response.length==0){
+        console.log("length=>",response.length)
+        this.deta=false
       }
-      this.viewStudent=response 
+      else{
+        let i=0
+        for(i;i<response.length;i++){
+         this.addSkill() 
+        }
+        this.viewStudent=response 
+        this.deta=true
+      }
+    
      })
   }
 
   configExam(){
-    this.examService.getAll().subscribe((cr :any)=>{
-      this.examination=cr;
+    this.examService.getbyustaadh(this.ustaadh_id).subscribe((cr :any)=>{
+      this.examination=cr
+      console.log("exam ",cr)
     })
   }
 
