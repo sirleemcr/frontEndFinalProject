@@ -15,13 +15,16 @@ export class StudentResultComponent implements OnInit {
   lastName:any
   middleName:any
   swaful_name:any
-  subject_name:any
-  marks:any
+  Result:any[]=[]
+  year:any
   
 
   ngOnInit(): void {
-    // this.subject_name=this.examser.subject_name
-    // this.marks=this.examser.marks
+     this.firstName=this.examser.firstName 
+     this.middleName=this.examser.middleName
+     this.lastName=this.examser.lastName
+     this.Result=this.examser.Result
+     this.year=this.examser.year
     this.examser.OnfetchData();
     
   }

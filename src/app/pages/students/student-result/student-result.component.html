@@ -3,9 +3,28 @@
         <div class=" bismillah">
             <b><img src="assets/bism.png"></b>
         </div>
-        <div>logo ya madrasa</div>
-        <div class="majina"><h1>Katika muhula wa masomo wa mwaka .......................,{{marks}}
-            mwanafunzi .............................,{{subject_name}} amepata alama zifuatazo kwenye masomo yake 
+        <div>
+            <b><img class="logo" src="assets/logo.jpg"></b>
+        </div>
+        
+        <div class="majina"><h1>Katika muhula wa masomo wa mwaka {{year}}
+            mwanafunzi {{firstName}} {{middleName}} {{lastName}} amepata alama zifuatazo kwenye masomo yake 
+            <table class="table table-border">
+                <thead>
+                    <tr>
+                    <th>somo</th>
+                    <th>alama</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cr of Result">
+                      <td>{{cr.subject_name}}</td>
+                      <td>{{cr.marks}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        
         </h1></div>
         <div>masomo</div>
          

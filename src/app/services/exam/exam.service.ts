@@ -7,8 +7,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ExamService {
-  subject_name:any
-  marks:any
+  Result:any
+  firstName:any
+  lastName:any
+  middleName:any
+  year:any
   private ExamApi:string="http://localhost:8090/i"
 
   constructor(private http:HttpClient,private router:Router) { }
@@ -54,7 +57,7 @@ export class ExamService {
     this.router.navigateByUrl('result').then(()=>{
       this.router.navigateByUrl('result')
       window.print();
-      this.router.navigateByUrl("main/matokeo")
+      this.router.navigateByUrl("main/student")
     })
 }
 }

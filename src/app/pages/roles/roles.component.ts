@@ -43,7 +43,7 @@ export class RolesComponent implements OnInit {
 
   getustaadh(){
     this.ustaadhServce.getAll().subscribe((cr:any)=>{
-      console.log("roless=>",cr.rolesList)
+      console.log("data=>",cr)
       this.viewUstaadh=cr
       cr.forEach((element:any) => {
         console.log("roless=>",element.rolesList)
